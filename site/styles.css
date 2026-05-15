@@ -1161,6 +1161,7 @@ a.contact-block:hover {
   color: var(--c-ink);
   box-shadow: var(--s-3);
 }
+.contact-form h3, .contact-form h4, .contact-form .contact-form__title { color: var(--c-ink); }
 .contact-form__title {
   font-family: var(--f-serif);
   font-size: 26px;
