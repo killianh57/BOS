@@ -1,59 +1,68 @@
-// Year
+// Année dans le footer
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Burger menu (mobile)
-const burger = document.querySelector(".nav__burger");
-const navLinks = document.querySelector(".nav__links");
-if (burger && navLinks) {
-  burger.addEventListener("click", () => {
-    const open = burger.getAttribute("aria-expanded") === "true";
-    burger.setAttribute("aria-expanded", String(!open));
-    if (!open) {
-      navLinks.style.display = "flex";
-      navLinks.style.flexDirection = "column";
-      navLinks.style.position = "absolute";
-      navLinks.style.top = "72px";
-      navLinks.style.left = "0";
-      navLinks.style.right = "0";
-      navLinks.style.background = "#fff";
-      navLinks.style.padding = "20px 24px";
-      navLinks.style.gap = "16px";
-      navLinks.style.borderBottom = "1px solid rgba(14,23,38,.06)";
-      navLinks.style.boxShadow = "0 8px 24px rgba(14,23,38,.06)";
-    } else {
-      navLinks.style.cssText = "";
-    }
-  });
-}
+// Nav scroll shadow
+const nav = document.getElementById("nav");
+const onScroll = () => {
+  if (window.scrollY > 12) nav.classList.add("is-scrolled");
+  else nav.classList.remove("is-scrolled");
+};
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
 
-// Reveal on scroll
-const observer = new IntersectionObserver(
+// Mobile menu
+const burger = document.getElementById("burger");
+const mobileMenu = document.getElementById("mobileMenu");
+const closeMenu = () => {
+  burger.setAttribute("aria-expanded", "false");
+  mobileMenu.classList.remove("is-open");
+  setTimeout(() => mobileMenu.setAttribute("hidden", ""), 250);
+};
+const openMenu = () => {
+  burger.setAttribute("aria-expanded", "true");
+  mobileMenu.removeAttribute("hidden");
+  requestAnimationFrame(() => mobileMenu.classList.add("is-open"));
+};
+burger.addEventListener("click", () => {
+  const isOpen = burger.getAttribute("aria-expanded") === "true";
+  if (isOpen) closeMenu();
+  else openMenu();
+});
+mobileMenu.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
+
+// Reveal au scroll
+const io = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("in");
-        observer.unobserve(entry.target);
+        io.unobserve(entry.target);
       }
     });
   },
-  { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+  { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
 );
-
 document
   .querySelectorAll(
-    ".section__head, .feature, .duo__card, .step, .docs, .quote, .hero__card, .contact-block, .hero__content"
+    ".section__head, .feature, .duo__card, .step, .docs, .quote, .hero__visual, .hero__content, .contact-block, .strip"
   )
   .forEach((el) => {
     el.classList.add("reveal");
-    observer.observe(el);
+    io.observe(el);
   });
 
-// Smooth close mobile menu when clicking a nav link
-document.querySelectorAll(".nav__links a").forEach((a) => {
-  a.addEventListener("click", () => {
-    if (window.matchMedia("(max-width: 980px)").matches) {
-      navLinks.style.cssText = "";
-      burger.setAttribute("aria-expanded", "false");
+// Form submit
+const form = document.getElementById("contactForm");
+if (form) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
     }
+    const success = form.querySelector(".form-success");
+    success.hidden = false;
+    form.querySelectorAll("input, select, textarea").forEach((el) => (el.value = ""));
+    success.scrollIntoView({ behavior: "smooth", block: "center" });
   });
-});
+}
