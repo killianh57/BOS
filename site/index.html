@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hygie — Intérim médical & paramédical à Paris et Île-de-France</title>
+  <meta name="description" content="Hygie est une agence d'intérim et de recrutement spécialisée dans le personnel médical et paramédical à Paris et en Île-de-France. 30+ ans d'expérience, permanence 24/7." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="#" class="brand" aria-label="Hygie">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 4v24M4 16h24" />
+            <circle cx="16" cy="16" r="13" />
+          </svg>
+        </span>
+        <span class="brand__name">Hygie<span class="brand__dot">.</span></span>
+      </a>
+
+      <nav class="nav__links" aria-label="Navigation principale">
+        <a href="#about">À propos</a>
+        <a href="#candidats">Candidats</a>
+        <a href="#etablissements">Établissements</a>
+        <a href="#metiers">Métiers</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav__cta">
+        <a href="tel:0142660320" class="phone-link" aria-label="Appeler Hygie">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          01 42 66 03 20
+        </a>
+        <a href="#contact" class="btn btn--primary">S'inscrire</a>
+      </div>
+
+      <button class="nav__burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="eyebrow">
+          <span class="eyebrow__pulse"></span>
+          Permanence 24/7 · Paris & Île-de-France
+        </span>
+        <h1>
+          L'intérim médical,<br />
+          <span class="text-grad">pensé pour les soignants.</span>
+        </h1>
+        <p class="hero__lead">
+          Hygie connecte les hôpitaux, cliniques et établissements de soins avec
+          des professionnels de santé qualifiés. 30 ans d'expérience, une équipe
+          disponible jour et nuit, et des missions à votre mesure.
+        </p>
+
+        <div class="hero__ctas">
+          <a href="#candidats" class="btn btn--primary btn--lg">
+            Je suis soignant
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#etablissements" class="btn btn--ghost btn--lg">
+            Je recrute pour mon établissement
+          </a>
+        </div>
+
+        <div class="hero__trust">
+          <div class="trust">
+            <div class="trust__num">30+</div>
+            <div class="trust__label">années d'expérience</div>
+          </div>
+          <div class="trust__sep"></div>
+          <div class="trust">
+            <div class="trust__num">24/7</div>
+            <div class="trust__label">permanence téléphonique</div>
+          </div>
+          <div class="trust__sep"></div>
+          <div class="trust">
+            <div class="trust__num">8h–19h</div>
+            <div class="trust__label">agence ouverte non-stop</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero__card" aria-label="Mission urgente">
+        <div class="card-glow"></div>
+        <div class="hero-card__head">
+          <span class="hero-card__dot"></span>
+          Mission en cours
+        </div>
+        <h3 class="hero-card__title">IDE — Service de Médecine</h3>
+        <ul class="hero-card__meta">
+          <li><strong>Lieu</strong> Paris 13e</li>
+          <li><strong>Durée</strong> Mission longue</li>
+          <li><strong>Début</strong> Cette semaine</li>
+        </ul>
+        <div class="hero-card__row">
+          <span class="chip">CDD</span>
+          <span class="chip">Intérim</span>
+          <span class="chip">CDI</span>
+        </div>
+        <a href="#contact" class="hero-card__cta">
+          Voir toutes les missions
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </aside>
+    </div>
+
+    <div class="hero__bg" aria-hidden="true"></div>
+  </section>
+
+  <!-- LOGOS / TYPE D'ÉTABLISSEMENTS -->
+  <section class="strip">
+    <div class="container">
+      <p class="strip__label">Ils nous font confiance · hôpitaux publics, cliniques privées, EHPAD, centres de soins</p>
+      <div class="strip__items">
+        <div class="strip__item">Hôpitaux</div>
+        <div class="strip__dot"></div>
+        <div class="strip__item">Cliniques</div>
+        <div class="strip__dot"></div>
+        <div class="strip__item">EHPAD</div>
+        <div class="strip__dot"></div>
+        <div class="strip__item">Centres de soins</div>
+        <div class="strip__dot"></div>
+        <div class="strip__item">Maisons de retraite</div>
+        <div class="strip__dot"></div>
+        <div class="strip__item">SSR</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container grid-2">
+      <div>
+        <span class="kicker">À propos</span>
+        <h2>Pourquoi Hygie ?</h2>
+        <p class="lead">
+          Dans la mythologie grecque, <em>Hygie</em> est la déesse de la santé,
+          de la guérison et du bonheur. Le nom n'est pas un hasard.
+        </p>
+        <p>
+          Nous sommes une Entreprise de Travail Temporaire et de Recrutement
+          spécialisée dans le personnel médical et paramédical. Notre équipe
+          réunit 30 ans d'expérience dans l'intérim de santé. Notre siège est
+          situé au cœur de Paris, et notre zone d'intervention couvre toute
+          l'Île-de-France.
+        </p>
+        <blockquote>
+          « Comment rendre les choses possibles si on ne postule pas
+          l'impossible. »
+          <cite>Notre devise</cite>
+        </blockquote>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h4>Agence ouverte 8h–19h</h4>
+          <p>Du lundi au vendredi, sans interruption, au 19 Rue Mogador, Paris 9ᵉ.</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          </div>
+          <h4>Permanence 24/7</h4>
+          <p>Une vraie personne au bout du fil, 24h/24 — 7j/7, assurée par l'équipe permanente.</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h4>Équipe spécialisée</h4>
+          <p>Des consultants qui connaissent l'intérim médical, et qui parlent votre langue.</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12.01l8.73-5.05M12 22.08V12"/></svg>
+          </div>
+          <h4>SI performant</h4>
+          <p>Un système d'information qui matche les bons profils aux bonnes missions, vite.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TWO COLUMNS : CANDIDATS / ETABLISSEMENTS -->
+  <section id="candidats" class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <span class="kicker">Pour qui ?</span>
+        <h2>Une réponse pour chaque besoin</h2>
+        <p class="lead">
+          Que vous soyez soignant ou décideur d'établissement, Hygie vous
+          accompagne avec la même exigence.
+        </p>
+      </div>
+
+      <div class="duo">
+        <article class="duo__card">
+          <div class="duo__icon duo__icon--blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3>Soignants</h3>
+          <p class="duo__sub">Travaillez où vous voulez, quand vous voulez.</p>
+          <ul class="bullets">
+            <li>Des missions à Paris et en Île-de-France, courte ou longue durée</li>
+            <li>Contrats en intérim, CDD ou CDI</li>
+            <li>Une équipe à l'écoute, qui défend vos conditions</li>
+            <li>Inscription sans rendez-vous à l'agence</li>
+            <li>Un cadeau de bienvenue à l'inscription</li>
+          </ul>
+          <a href="#contact" class="btn btn--primary">Je m'inscris</a>
+        </article>
+
+        <article id="etablissements" class="duo__card">
+          <div class="duo__icon duo__icon--green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4M9 9h.01M9 12h.01M9 15h.01M9 18h.01"/></svg>
+          </div>
+          <h3>Établissements</h3>
+          <p class="duo__sub">Couvrez vos plannings, sans compromis sur la qualité.</p>
+          <ul class="bullets">
+            <li>Réponse rapide, 24h/24, sur toutes les spécialités</li>
+            <li>Personnel qualifié, diplômes et habilitations vérifiés</li>
+            <li>Intérim, CDD, CDI, missions courtes ou longues</li>
+            <li>Suivi dédié par un consultant qui connaît votre service</li>
+            <li>Facturation simple, conforme à la réglementation</li>
+          </ul>
+          <a href="#contact" class="btn btn--dark">Demander un devis</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTIERS -->
+  <section id="metiers" class="section">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <span class="kicker">Métiers</span>
+        <h2>Toutes les spécialités du médical & paramédical</h2>
+        <p class="lead">
+          Nous recrutons en permanence sur l'ensemble des qualifications,
+          pour Paris, la petite et la grande couronne.
+        </p>
+      </div>
+
+      <div class="jobs">
+        <span class="job">Infirmier(e) DE</span>
+        <span class="job">IDE Bloc</span>
+        <span class="job">IBODE</span>
+        <span class="job">IADE — Infirmier Anesthésiste</span>
+        <span class="job">Aide-soignant(e)</span>
+        <span class="job">Auxiliaire de puériculture DE</span>
+        <span class="job">Brancardier(e)</span>
+        <span class="job">Kinésithérapeute</span>
+        <span class="job">Manipulateur(trice) Radio</span>
+        <span class="job">Panseuse / Panseur DE</span>
+        <span class="job">Préparateur(trice) en pharmacie</span>
+        <span class="job">Élève infirmier(e) 2ᵉ / 3ᵉ année</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <span class="kicker">Inscription</span>
+        <h2>S'inscrire chez Hygie en 3 étapes</h2>
+        <p class="lead">
+          Pas de rendez-vous. Vous venez à l'agence avec vos documents, on fait
+          le point ensemble, et on cale vos premières missions.
+        </p>
+      </div>
+
+      <ol class="steps">
+        <li class="step">
+          <div class="step__num">01</div>
+          <h4>Rassemblez vos documents</h4>
+          <p>Diplôme d'État, enregistrement ADELI, pièce d'identité, carte vitale, casier judiciaire B3, justificatif de domicile, carnet de vaccination, CV.</p>
+        </li>
+        <li class="step">
+          <div class="step__num">02</div>
+          <h4>Venez à l'agence</h4>
+          <p>19 Rue Mogador, Paris 9ᵉ. Ouvert 8h–19h, du lundi au vendredi, sans rendez-vous.</p>
+        </li>
+        <li class="step">
+          <div class="step__num">03</div>
+          <h4>Démarrez vos missions</h4>
+          <p>On fait le point sur vos attentes, on aligne avec les besoins de nos clients, et c'est parti.</p>
+        </li>
+      </ol>
+
+      <div class="docs">
+        <div class="docs__col">
+          <h5>Originaux obligatoires</h5>
+          <ul>
+            <li>Diplôme d'État</li>
+            <li>Enregistrement ADELI</li>
+            <li>Pièce d'identité / titre de séjour</li>
+            <li>Carte de Sécurité Sociale</li>
+            <li>Casier judiciaire B3</li>
+          </ul>
+        </div>
+        <div class="docs__col">
+          <h5>Photocopies</h5>
+          <ul>
+            <li>Justificatif de domicile</li>
+            <li>Carnet de vaccination</li>
+            <li>Fiche d'aptitude médicale</li>
+            <li>Permis de conduire</li>
+            <li>CV & certificats de travail</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TÉMOIGNAGE / CITATION -->
+  <section class="section quote-section">
+    <div class="container">
+      <div class="quote">
+        <svg class="quote__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.17 6A6.17 6.17 0 0 0 3 12.17V18h6v-5.83a2.17 2.17 0 0 1 2.17-2.17V6Zm12 0a6.17 6.17 0 0 0-6.17 6.17V18h6v-5.83a2.17 2.17 0 0 1 2.17-2.17V6Z"/></svg>
+          <p>
+            Si vous avez déjà travaillé avec nous, ou si vous envisagez de le
+            faire, venez nous voir. Carole, Fidèle, Camille, Vanessa et toute
+            l'équipe vous accueilleront avec plaisir.
+          </p>
+        <cite>— L'équipe Hygie</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section section--dark">
+    <div class="container grid-2 contact-grid">
+      <div class="contact-info">
+        <span class="kicker kicker--light">Contact</span>
+        <h2>On en parle ?</h2>
+        <p class="lead">
+          Que vous soyez soignant à la recherche de missions, ou établissement
+          à la recherche de renfort — un appel, un message, et c'est lancé.
+        </p>
+
+        <div class="contact-blocks">
+          <a href="tel:0142660320" class="contact-block">
+            <div class="contact-block__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            </div>
+            <div>
+              <div class="contact-block__label">Téléphone — 24/7</div>
+              <div class="contact-block__value">01 42 66 03 20</div>
+            </div>
+          </a>
+
+          <a href="https://www.google.fr/maps/place/19+Rue+de+Mogador,+75009+Paris" target="_blank" rel="noopener" class="contact-block">
+            <div class="contact-block__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact-block__label">Agence</div>
+              <div class="contact-block__value">19 Rue Mogador, 75009 Paris</div>
+              <div class="contact-block__meta">Métro Havre-Caumartin (3 & 9), Chaussée d'Antin (7 & 9), RER E St-Lazare</div>
+            </div>
+          </a>
+
+          <div class="contact-block">
+            <div class="contact-block__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div>
+              <div class="contact-block__label">Horaires d'ouverture</div>
+              <div class="contact-block__value">Lundi – Vendredi · 8h à 19h</div>
+              <div class="contact-block__meta">Permanence téléphonique 24h/24, 7j/7</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="event.preventDefault(); this.querySelector('.form-success').hidden = false;">
+        <div class="form-row form-row--2">
+          <label>
+            <span>Civilité</span>
+            <select name="title" required>
+              <option value="" disabled selected>Choisir</option>
+              <option>Madame</option>
+              <option>Mademoiselle</option>
+              <option>Monsieur</option>
+            </select>
+          </label>
+          <label>
+            <span>Qualification</span>
+            <select name="qualification" required>
+              <option value="" disabled selected>Choisir</option>
+              <option>Infirmier(e) DE</option>
+              <option>IDE Bloc</option>
+              <option>IBODE</option>
+              <option>Infirmier(e) Anesthésiste</option>
+              <option>Aide-soignant(e)</option>
+              <option>Auxiliaire de puériculture DE</option>
+              <option>Brancardier(e)</option>
+              <option>Kinésithérapeute</option>
+              <option>Manipulateur(trice) radio</option>
+              <option>Panseuse / Panseur DE</option>
+              <option>Préparateur(trice) en pharmacie</option>
+              <option>Élève infirmier(e) 2ᵉ année</option>
+              <option>Élève infirmier(e) 3ᵉ année</option>
+              <option>Autre</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="form-row form-row--2">
+          <label>
+            <span>Prénom</span>
+            <input type="text" name="firstname" required />
+          </label>
+          <label>
+            <span>Nom</span>
+            <input type="text" name="lastname" required />
+          </label>
+        </div>
+
+        <div class="form-row form-row--2">
+          <label>
+            <span>Téléphone</span>
+            <input type="tel" name="phone" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required />
+          </label>
+        </div>
+
+        <label>
+          <span>Message (optionnel)</span>
+          <textarea name="message" rows="4" placeholder="Disponibilités, expériences, attentes…"></textarea>
+        </label>
+
+        <button type="submit" class="btn btn--primary btn--lg btn--full">
+          Envoyer ma candidature
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+
+        <p class="form-note">En envoyant, vous acceptez d'être rappelé par Hygie. Aucune donnée n'est partagée.</p>
+
+        <div class="form-success" hidden>
+          <strong>Merci !</strong> Votre demande est reçue. Nous vous rappelons très vite.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="brand brand--light">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 4v24M4 16h24" />
+              <circle cx="16" cy="16" r="13" />
+            </svg>
+          </span>
+          <span class="brand__name">Hygie<span class="brand__dot">.</span></span>
+        </a>
+        <p>L'intérim médical et paramédical à Paris et en Île-de-France. Depuis plus de 30 ans.</p>
+      </div>
+
+      <div class="footer__col">
+        <h6>Hygie</h6>
+        <a href="#about">À propos</a>
+        <a href="#metiers">Métiers</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer__col">
+        <h6>Adresse</h6>
+        <p>19 Rue Mogador<br />75009 Paris</p>
+        <a href="tel:0142660320">01 42 66 03 20</a>
+      </div>
+
+      <div class="footer__col">
+        <h6>Horaires</h6>
+        <p>Lun – Ven · 8h – 19h<br />Permanence 24/7</p>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> Hygie — Entreprise de Travail Temporaire et de Recrutement</span>
+      <span>Spécialisée médical & paramédical</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
