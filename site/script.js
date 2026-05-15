@@ -51,7 +51,7 @@ document
     io.observe(el);
   });
 
-// Form submit
+// Form submit — ouvre un mailto avec les infos pré-remplies
 const form = document.getElementById("contactForm");
 if (form) {
   form.addEventListener("submit", (e) => {
@@ -60,9 +60,38 @@ if (form) {
       form.reportValidity();
       return;
     }
+    const data = new FormData(form);
+    const fields = {
+      title: data.get("title"),
+      qualification: data.get("qualification"),
+      firstname: data.get("firstname"),
+      lastname: data.get("lastname"),
+      phone: data.get("phone"),
+      email: data.get("email"),
+      message: data.get("message") || "",
+    };
+    const subject = `Inscription Hygie — ${fields.qualification} — ${fields.firstname} ${fields.lastname}`;
+    const body = [
+      `Civilité : ${fields.title}`,
+      `Nom : ${fields.lastname}`,
+      `Prénom : ${fields.firstname}`,
+      `Qualification : ${fields.qualification}`,
+      `Téléphone : ${fields.phone}`,
+      `Email : ${fields.email}`,
+      ``,
+      `Message :`,
+      fields.message,
+    ].join("\n");
+    const href = `mailto:contact@hygie-interim.fr?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+    window.location.href = href;
+
     const success = form.querySelector(".form-success");
     success.hidden = false;
-    form.querySelectorAll("input, select, textarea").forEach((el) => (el.value = ""));
-    success.scrollIntoView({ behavior: "smooth", block: "center" });
+    setTimeout(() => {
+      form.querySelectorAll("input, textarea").forEach((el) => (el.value = ""));
+      form.querySelectorAll("select").forEach((el) => (el.selectedIndex = 0));
+    }, 500);
   });
 }
