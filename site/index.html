@@ -3,53 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#fbfaf7" />
-  <title>Hygie — Intérim médical & paramédical · Paris & Île-de-France</title>
-  <meta name="description" content="Hygie, agence d'intérim et de recrutement spécialisée médical et paramédical à Paris. 30+ ans d'expérience, permanence 24/7. Soignants : trouvez vos missions. Établissements : couvrez vos plannings." />
+  <meta name="theme-color" content="#0a1320" />
+  <title>Hygie — L'intérim médical augmenté par l'IA · Paris & Île-de-France</title>
+  <meta name="description" content="Hygie connecte les soignants aux meilleures missions de Paris et d'Île-de-France grâce à un matching IA. 30 ans d'expérience, permanence 24/7." />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Hygie — Intérim médical & paramédical · Paris & Île-de-France" />
-  <meta property="og:description" content="30 ans d'expérience, permanence 24/7. Soignants : trouvez vos missions. Établissements : couvrez vos plannings." />
+  <meta property="og:title" content="Hygie — L'intérim médical augmenté par l'IA" />
+  <meta property="og:description" content="Le bon soignant, sur la bonne mission, en quelques secondes. Permanence 24/7." />
   <meta property="og:locale" content="fr_FR" />
-  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Favicon SVG inline -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d6f6f'/%3E%3Cpath d='M16 8v16M8 16h16' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23051018'/%3E%3Cpath d='M11 22V10M11 16h10M21 22V10' stroke='%2360e0c0' stroke-width='2.6' stroke-linecap='round' fill='none'/%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
+  <!-- Curseur custom -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+  </div>
+
+  <!-- Bruit / grain texture -->
+  <div class="noise" aria-hidden="true"></div>
+
   <!-- NAV -->
   <header class="nav" id="nav">
     <div class="container nav__inner">
-      <a href="#top" class="brand" aria-label="Hygie">
-        <span class="brand__mark" aria-hidden="true">
-          <svg viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 6v20M6 16h20" />
+      <a href="#top" class="brand" data-hover>
+        <span class="brand__mark">
+          <svg viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
+            <path d="M11 22V10M11 16h10M21 22V10"/>
           </svg>
         </span>
         <span class="brand__name">Hygie</span>
+        <span class="brand__tag">.ai</span>
       </a>
 
-      <nav class="nav__links" aria-label="Navigation principale">
-        <a href="#about">À propos</a>
-        <a href="#audience">Pour qui</a>
-        <a href="#metiers">Métiers</a>
-        <a href="#process">Inscription</a>
-        <a href="#contact">Contact</a>
+      <nav class="nav__links">
+        <a href="#solution" data-hover>Solution</a>
+        <a href="#ia" data-hover>IA</a>
+        <a href="#metiers" data-hover>Métiers</a>
+        <a href="#process" data-hover>Inscription</a>
+        <a href="#contact" data-hover>Contact</a>
       </nav>
 
       <div class="nav__cta">
-        <a href="tel:0142660320" class="phone-link" aria-label="Appeler Hygie au 01 42 66 03 20">
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-          <span>01 42 66 03 20</span>
+        <a href="tel:0142660320" class="phone-link" data-hover>
+          <span class="phone-dot"></span>
+          <span>24/7</span>
         </a>
-        <a href="#contact" class="btn btn--primary btn--sm">S'inscrire</a>
+        <a href="#contact" class="btn btn--primary btn--sm" data-hover>
+          Démarrer
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
       </div>
 
       <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false">
@@ -57,277 +67,368 @@
       </button>
     </div>
 
-    <!-- Mobile menu -->
     <div class="mobile-menu" id="mobileMenu" hidden>
-      <a href="#about">À propos</a>
-      <a href="#audience">Pour qui</a>
+      <a href="#solution">Solution</a>
+      <a href="#ia">IA</a>
       <a href="#metiers">Métiers</a>
       <a href="#process">Inscription</a>
       <a href="#contact">Contact</a>
       <div class="mobile-menu__cta">
         <a href="tel:0142660320" class="btn btn--ghost btn--full">01 42 66 03 20</a>
-        <a href="#contact" class="btn btn--primary btn--full">S'inscrire</a>
+        <a href="#contact" class="btn btn--primary btn--full">Démarrer</a>
       </div>
     </div>
   </header>
 
   <!-- HERO -->
   <section class="hero" id="top">
-    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__grid"></div>
+      <div class="hero__glow hero__glow--1"></div>
+      <div class="hero__glow hero__glow--2"></div>
+    </div>
 
     <div class="container hero__inner">
-      <div class="hero__content">
-        <span class="eyebrow">
-          <span class="eyebrow__pulse"></span>
-          Permanence 24/7 · Paris & Île-de-France
+      <div class="hero__top">
+        <span class="badge" data-hover>
+          <span class="badge__dot"></span>
+          Nouveau — Matching IA en temps réel
         </span>
-
-        <h1>
-          L'intérim médical,<br />
-          <span class="text-grad">pensé pour les soignants.</span>
-        </h1>
-
-        <p class="hero__lead">
-          Hygie connecte hôpitaux, cliniques et établissements de soins avec
-          des professionnels de santé qualifiés. 30 ans d'expérience, une
-          équipe joignable jour et nuit, des missions à votre mesure.
-        </p>
-
-        <div class="hero__ctas">
-          <a href="#audience" class="btn btn--primary btn--lg">
-            Je suis soignant
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-          </a>
-          <a href="#audience" class="btn btn--ghost btn--lg">
-            Je recrute
-          </a>
-        </div>
-
-        <div class="hero__trust">
-          <div class="trust">
-            <div class="trust__num">30<span>+</span></div>
-            <div class="trust__label">années<br/>d'expérience</div>
-          </div>
-          <div class="trust__sep"></div>
-          <div class="trust">
-            <div class="trust__num">24<span>/7</span></div>
-            <div class="trust__label">permanence<br/>téléphonique</div>
-          </div>
-          <div class="trust__sep"></div>
-          <div class="trust">
-            <div class="trust__num">+12</div>
-            <div class="trust__label">spécialités<br/>médicales</div>
-          </div>
-        </div>
       </div>
 
-      <div class="hero__visual">
-        <!-- Composition décorative -->
-        <div class="hero-blob hero-blob--1" aria-hidden="true"></div>
-        <div class="hero-blob hero-blob--2" aria-hidden="true"></div>
+      <h1 class="hero__title">
+        <span class="t-line">L'intérim médical,</span>
+        <span class="t-line"><em>augmenté</em> par l'intelligence</span>
+        <span class="t-line">artificielle.</span>
+      </h1>
 
-        <!-- Carte principale : "dashboard" mission -->
-        <div class="mock-card mock-card--main">
-          <div class="mock-card__head">
-            <div class="mock-card__brand">
-              <span class="mock-card__logo">
-                <svg viewBox="0 0 32 32" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M16 6v20M6 16h20"/></svg>
-              </span>
-              <span>Hygie · Espace mission</span>
-            </div>
-            <span class="mock-card__live">
-              <span class="live-dot"></span> En direct
+      <p class="hero__lead">
+        Hygie connecte 12&nbsp;000+ soignants aux établissements de Paris et d'Île-de-France.
+        Notre IA matche le bon profil à la bonne mission en quelques secondes —
+        avec, derrière, une équipe humaine joignable 24/7.
+      </p>
+
+      <div class="hero__ctas">
+        <a href="#match" class="btn btn--primary btn--lg" data-hover>
+          Lancer un match
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#ia" class="btn btn--ghost btn--lg" data-hover>
+          Voir comment ça marche
+        </a>
+      </div>
+
+      <!-- WIDGET MATCH IA -->
+      <div class="match" id="match">
+        <div class="match__head">
+          <div class="match__head-left">
+            <span class="match__pulse">
+              <span></span><span></span>
             </span>
+            <div>
+              <div class="match__title">Match instantané</div>
+              <div class="match__sub">Renseigne tes critères — l'IA propose 3 missions</div>
+            </div>
           </div>
-
-          <div class="mock-card__body">
-            <div class="mock-mission">
-              <div class="mock-mission__head">
-                <span class="mock-tag mock-tag--green">Nouvelle mission</span>
-                <span class="mock-mission__time">il y a 2 min</span>
-              </div>
-              <h4 class="mock-mission__title">Infirmier(e) DE — Service Médecine</h4>
-              <div class="mock-mission__meta">
-                <span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Paris 13ᵉ</span>
-                <span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 3 mois</span>
-                <span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Démarrage immédiat</span>
-              </div>
-            </div>
-
-            <div class="mock-team">
-              <div class="mock-team__label">Votre interlocuteur</div>
-              <div class="mock-team__row">
-                <div class="mock-avatar">
-                  <span>C</span>
-                </div>
-                <div>
-                  <div class="mock-team__name">Carole — Consultante</div>
-                  <div class="mock-team__sub">Disponible · répond en moins de 10 min</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="mock-actions">
-              <span class="mock-btn mock-btn--primary">J'accepte</span>
-              <span class="mock-btn mock-btn--ghost">Plus d'infos</span>
-            </div>
+          <div class="match__head-right">
+            <span class="match__pill">Powered by Hygie IA</span>
           </div>
         </div>
 
-        <!-- Carte flottante 1 : notification -->
-        <div class="float-card float-card--top">
-          <div class="float-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-          </div>
-          <div>
-            <div class="float-card__label">Mission validée</div>
-            <div class="float-card__value">IDE Bloc — 2 sept.</div>
-          </div>
-        </div>
+        <div class="match__body">
+          <div class="match__form">
+            <div class="match__row">
+              <label class="match__field">
+                <span>Qualification</span>
+                <select id="m-qual">
+                  <option>Infirmier(e) DE</option>
+                  <option>IDE Bloc</option>
+                  <option>IBODE</option>
+                  <option>IADE — Anesthésiste</option>
+                  <option>Aide-soignant(e)</option>
+                  <option>Kinésithérapeute</option>
+                  <option>Manipulateur(trice) radio</option>
+                </select>
+              </label>
+              <label class="match__field">
+                <span>Zone</span>
+                <select id="m-zone">
+                  <option>Paris (75)</option>
+                  <option>Hauts-de-Seine (92)</option>
+                  <option>Seine-Saint-Denis (93)</option>
+                  <option>Val-de-Marne (94)</option>
+                  <option>Toute l'Île-de-France</option>
+                </select>
+              </label>
+              <label class="match__field">
+                <span>Type</span>
+                <select id="m-type">
+                  <option>Intérim</option>
+                  <option>CDD</option>
+                  <option>CDI</option>
+                  <option>Toutes durées</option>
+                </select>
+              </label>
+            </div>
 
-        <!-- Carte flottante 2 : équipe -->
-        <div class="float-card float-card--bottom">
-          <div class="float-card__avatars">
-            <span>C</span><span>F</span><span>V</span>
+            <button class="btn btn--primary btn--lg btn--match" id="m-run" data-hover>
+              <span class="btn__label">Lancer le matching</span>
+              <span class="btn__loader" hidden>
+                <span></span><span></span><span></span>
+              </span>
+              <svg class="btn__arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </button>
           </div>
-          <div>
-            <div class="float-card__label">Équipe joignable</div>
-            <div class="float-card__value">24h/24 — 7j/7</div>
+
+          <div class="match__results" id="m-results">
+            <div class="match__placeholder">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+              <p>3 missions correspondantes vont apparaître ici</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Strip de confiance -->
-    <div class="container">
-      <div class="strip">
-        <p class="strip__label">Pour les hôpitaux publics, cliniques privées, EHPAD et centres de soins d'Île-de-France</p>
-        <div class="strip__items">
-          <span class="strip__item">Hôpitaux publics</span>
-          <span class="strip__dot"></span>
-          <span class="strip__item">Cliniques privées</span>
-          <span class="strip__dot"></span>
-          <span class="strip__item">EHPAD</span>
-          <span class="strip__dot"></span>
-          <span class="strip__item">SSR</span>
-          <span class="strip__dot"></span>
-          <span class="strip__item">Centres de soins</span>
-          <span class="strip__dot"></span>
-          <span class="strip__item">HAD</span>
+      <!-- TRUST BAR -->
+      <div class="trust-bar">
+        <div class="trust-bar__item">
+          <span class="trust-bar__num" data-counter="12000" data-suffix="+">0</span>
+          <span class="trust-bar__label">soignants en réseau</span>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="container grid-2 about-grid">
-      <div>
-        <span class="kicker">À propos</span>
-        <h2>Pourquoi <em>Hygie</em> ?</h2>
-        <p class="lead">
-          Dans la mythologie grecque, Hygie est la déesse de la santé, de la
-          guérison et du bonheur. Le nom n'est pas un hasard.
-        </p>
-        <p>
-          Nous sommes une Entreprise de Travail Temporaire et de Recrutement
-          spécialisée dans le personnel médical et paramédical. Notre équipe
-          réunit 30 ans d'expérience dans l'intérim de santé. Notre siège est
-          au cœur de Paris, et notre zone d'intervention couvre toute
-          l'Île-de-France.
-        </p>
-        <blockquote>
-          « Comment rendre les choses possibles si on ne postule pas l'impossible. »
-          <cite>Notre devise</cite>
-        </blockquote>
-      </div>
-
-      <div class="features">
-        <div class="feature">
-          <div class="feature__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          </div>
-          <h4>Agence 8h–19h</h4>
-          <p>Lundi au vendredi, sans interruption, 19 Rue Mogador, Paris 9ᵉ.</p>
+        <div class="trust-bar__sep"></div>
+        <div class="trust-bar__item">
+          <span class="trust-bar__num" data-counter="240" data-suffix="+">0</span>
+          <span class="trust-bar__label">établissements partenaires</span>
         </div>
-
-        <div class="feature">
-          <div class="feature__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-          </div>
-          <h4>Permanence 24/7</h4>
-          <p>Une vraie personne au bout du fil. 24h/24, 7j/7, par notre équipe.</p>
+        <div class="trust-bar__sep"></div>
+        <div class="trust-bar__item">
+          <span class="trust-bar__num" data-counter="30" data-suffix=" ans">0</span>
+          <span class="trust-bar__label">d'expérience</span>
         </div>
-
-        <div class="feature">
-          <div class="feature__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h4>Équipe spécialisée</h4>
-          <p>Des consultants qui parlent le langage du soin. Pas du commercial.</p>
-        </div>
-
-        <div class="feature">
-          <div class="feature__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12.01l8.73-5.05M12 22.08V12"/></svg>
-          </div>
-          <h4>SI performant</h4>
-          <p>Le bon profil sur la bonne mission, vite — sans bricolage.</p>
+        <div class="trust-bar__sep"></div>
+        <div class="trust-bar__item">
+          <span class="trust-bar__num">24/7</span>
+          <span class="trust-bar__label">permanence humaine</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- AUDIENCE / DUO -->
-  <section id="audience" class="section section--alt">
+  <!-- MARQUEE PARTENAIRES -->
+  <section class="marquee-section">
+    <p class="marquee-label">Ils nous font confiance pour leurs missions urgentes</p>
+    <div class="marquee">
+      <div class="marquee__track">
+        <span>Hôpital Universitaire</span>
+        <span class="marquee__dot"></span>
+        <span>Clinique du Parc</span>
+        <span class="marquee__dot"></span>
+        <span>EHPAD Les Tilleuls</span>
+        <span class="marquee__dot"></span>
+        <span>Centre de Soins Saint-Vincent</span>
+        <span class="marquee__dot"></span>
+        <span>SSR La Roseraie</span>
+        <span class="marquee__dot"></span>
+        <span>HAD Paris-Sud</span>
+        <span class="marquee__dot"></span>
+        <span>Maternité Sainte-Marie</span>
+        <span class="marquee__dot"></span>
+        <span>Clinique de l'Étoile</span>
+        <span class="marquee__dot"></span>
+        <!-- duplique pour boucle -->
+        <span>Hôpital Universitaire</span>
+        <span class="marquee__dot"></span>
+        <span>Clinique du Parc</span>
+        <span class="marquee__dot"></span>
+        <span>EHPAD Les Tilleuls</span>
+        <span class="marquee__dot"></span>
+        <span>Centre de Soins Saint-Vincent</span>
+        <span class="marquee__dot"></span>
+        <span>SSR La Roseraie</span>
+        <span class="marquee__dot"></span>
+        <span>HAD Paris-Sud</span>
+        <span class="marquee__dot"></span>
+        <span>Maternité Sainte-Marie</span>
+        <span class="marquee__dot"></span>
+        <span>Clinique de l'Étoile</span>
+        <span class="marquee__dot"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section id="solution" class="section section--solution">
     <div class="container">
       <div class="section__head">
-        <span class="kicker">Pour qui</span>
-        <h2>Une réponse pour chaque besoin</h2>
+        <span class="kicker">La solution</span>
+        <h2 class="h-display">Un service qui fait <em>gagner du temps</em><br/>aux soignants. Et aux directeurs.</h2>
         <p class="lead">
-          Soignant ou décideur d'établissement — Hygie vous accompagne avec la
-          même exigence.
+          Le matching IA accélère la mise en relation. L'équipe humaine garantit
+          la qualité. Vous gagnez l'un et l'autre.
         </p>
       </div>
 
-      <div class="duo">
-        <article class="duo__card duo__card--candidates">
-          <div class="duo__top">
-            <div class="duo__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
-            <span class="duo__tag">Candidats</span>
+      <div class="solution-grid">
+        <article class="solution-card solution-card--talent">
+          <div class="solution-card__head">
+            <span class="solution-card__role">Soignants</span>
+            <span class="solution-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
           </div>
-          <h3>Soignants</h3>
-          <p class="duo__sub">Travaillez où vous voulez, quand vous voulez.</p>
-          <ul class="bullets">
-            <li>Missions à Paris et en Île-de-France, courte ou longue durée</li>
+          <h3>Travaillez où vous voulez, quand vous voulez.</h3>
+          <ul class="check-list">
+            <li>Missions matchées à vos critères en temps réel</li>
             <li>Intérim, CDD ou CDI selon vos préférences</li>
-            <li>Une équipe à l'écoute, qui défend vos conditions</li>
-            <li>Inscription rapide, sans rendez-vous</li>
-            <li>Un cadeau de bienvenue à l'inscription</li>
+            <li>Une équipe humaine derrière chaque mission</li>
+            <li>Inscription en moins de 10 minutes</li>
           </ul>
-          <a href="#contact" class="btn btn--primary btn--full">Je m'inscris</a>
+          <a href="#contact" class="card-link" data-hover>
+            Je m'inscris
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
         </article>
 
-        <article class="duo__card duo__card--clients">
-          <div class="duo__top">
-            <div class="duo__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4M9 9h.01M9 12h.01M9 15h.01M9 18h.01"/></svg>
-            </div>
-            <span class="duo__tag duo__tag--alt">Établissements</span>
+        <article class="solution-card solution-card--client">
+          <div class="solution-card__head">
+            <span class="solution-card__role">Établissements</span>
+            <span class="solution-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4M9 9h.01M9 12h.01M9 15h.01M9 18h.01"/></svg>
+            </span>
           </div>
-          <h3>Établissements de santé</h3>
-          <p class="duo__sub">Couvrez vos plannings, sans compromis sur la qualité.</p>
-          <ul class="bullets">
-            <li>Réponse rapide 24h/24 sur toutes les spécialités</li>
-            <li>Personnel qualifié — diplômes et habilitations vérifiés</li>
-            <li>Intérim, CDD, CDI — missions courtes ou longues</li>
-            <li>Suivi dédié par un consultant qui connaît votre service</li>
+          <h3>Couvrez vos plannings, sans compromis.</h3>
+          <ul class="check-list">
+            <li>Profils qualifiés proposés en quelques minutes</li>
+            <li>Diplômes et habilitations vérifiés</li>
+            <li>Permanence 24h/24, y compris la nuit</li>
             <li>Facturation simple et conforme</li>
           </ul>
-          <a href="#contact" class="btn btn--dark btn--full">Demander un devis</a>
+          <a href="#contact" class="card-link" data-hover>
+            Demander un devis
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- L'IA HYGIE -->
+  <section id="ia" class="section section--ia">
+    <div class="ia-bg" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="ia-grid">
+        <div class="ia-text">
+          <span class="kicker kicker--light">Hygie IA</span>
+          <h2 class="h-display">L'intelligence artificielle <em>au service du soin</em>.</h2>
+          <p class="lead lead--light">
+            Notre moteur de matching analyse en continu les profils des soignants
+            et les besoins des établissements pour proposer la meilleure
+            correspondance — en quelques secondes, là où ça prenait des heures.
+          </p>
+
+          <div class="ia-features">
+            <div class="ia-feature">
+              <div class="ia-feature__num">01</div>
+              <div>
+                <h4>Matching contextuel</h4>
+                <p>L'IA croise qualification, expérience, zone géographique, disponibilité et préférences pour ne proposer que des missions pertinentes.</p>
+              </div>
+            </div>
+            <div class="ia-feature">
+              <div class="ia-feature__num">02</div>
+              <div>
+                <h4>Apprentissage continu</h4>
+                <p>Chaque mission affinée par l'équipe humaine entraîne le modèle. Plus de missions = plus de précision.</p>
+              </div>
+            </div>
+            <div class="ia-feature">
+              <div class="ia-feature__num">03</div>
+              <div>
+                <h4>Validation humaine</h4>
+                <p>L'IA propose, l'équipe Hygie valide. Pas de mauvaises surprises — chaque mission est revue par un consultant.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ia-demo">
+          <div class="ia-demo__header">
+            <div class="ia-demo__title">
+              <span class="live-dot"></span>
+              Matching en cours
+            </div>
+            <span class="ia-demo__meta">Hygie IA · v3.2</span>
+          </div>
+
+          <div class="ia-demo__body">
+            <!-- Ligne 1 : mission entrée -->
+            <div class="ia-step ia-step--in">
+              <div class="ia-step__avatar ia-step__avatar--client">H</div>
+              <div class="ia-step__bubble">
+                <div class="ia-step__label">Établissement</div>
+                <div class="ia-step__text">Besoin urgent : <strong>IDE</strong> Service Médecine, Paris 13ᵉ, mission de 3 mois, démarrage immédiat.</div>
+              </div>
+            </div>
+
+            <!-- Ligne 2 : IA analyse -->
+            <div class="ia-step ia-step--ai">
+              <div class="ia-step__avatar ia-step__avatar--ai">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+              </div>
+              <div class="ia-step__bubble ia-step__bubble--ai">
+                <div class="ia-step__label">Hygie IA</div>
+                <div class="ia-step__text">Analyse de 12&nbsp;847 profils… <strong>3 matchs trouvés</strong> en 1.2&nbsp;s</div>
+                <div class="ia-step__progress">
+                  <div class="ia-step__progress-bar"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ligne 3 : 3 profils proposés -->
+            <div class="ia-step ia-step--results">
+              <div class="ia-match-card">
+                <div class="ia-match-card__row">
+                  <div class="ia-match-card__avatar">C</div>
+                  <div class="ia-match-card__info">
+                    <div class="ia-match-card__name">Camille L.</div>
+                    <div class="ia-match-card__meta">IDE DE · 8 ans · Paris 13ᵉ</div>
+                  </div>
+                  <div class="ia-match-card__score">
+                    <span class="ia-score-num">98</span><span class="ia-score-pct">%</span>
+                    <div class="ia-score-label">Match</div>
+                  </div>
+                </div>
+              </div>
+              <div class="ia-match-card">
+                <div class="ia-match-card__row">
+                  <div class="ia-match-card__avatar ia-match-card__avatar--2">M</div>
+                  <div class="ia-match-card__info">
+                    <div class="ia-match-card__name">Mathieu R.</div>
+                    <div class="ia-match-card__meta">IDE DE · 5 ans · Paris 12ᵉ</div>
+                  </div>
+                  <div class="ia-match-card__score">
+                    <span class="ia-score-num">94</span><span class="ia-score-pct">%</span>
+                    <div class="ia-score-label">Match</div>
+                  </div>
+                </div>
+              </div>
+              <div class="ia-match-card">
+                <div class="ia-match-card__row">
+                  <div class="ia-match-card__avatar ia-match-card__avatar--3">A</div>
+                  <div class="ia-match-card__info">
+                    <div class="ia-match-card__name">Aïcha B.</div>
+                    <div class="ia-match-card__meta">IDE DE · 11 ans · Paris 14ᵉ</div>
+                  </div>
+                  <div class="ia-match-card__score">
+                    <span class="ia-score-num">91</span><span class="ia-score-pct">%</span>
+                    <div class="ia-score-label">Match</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -337,29 +438,80 @@
     <div class="container">
       <div class="section__head section__head--center">
         <span class="kicker">Métiers</span>
-        <h2>Toutes les spécialités<br/>médicales & paramédicales</h2>
+        <h2 class="h-display">Toutes les spécialités<br/><em>médicales & paramédicales</em></h2>
         <p class="lead">
-          Nous recrutons en permanence pour Paris, la petite et la grande
-          couronne.
+          Recrutement permanent sur Paris, petite et grande couronne.
         </p>
       </div>
 
       <div class="jobs">
-        <span class="job">Infirmier(e) DE</span>
-        <span class="job">IDE Bloc</span>
-        <span class="job">IBODE</span>
-        <span class="job">IADE — Anesthésiste</span>
-        <span class="job">Aide-soignant(e)</span>
-        <span class="job">Auxiliaire de puériculture</span>
-        <span class="job">Brancardier(e)</span>
-        <span class="job">Kinésithérapeute</span>
-        <span class="job">Manipulateur(trice) radio</span>
-        <span class="job">Panseuse / Panseur DE</span>
-        <span class="job">Préparateur en pharmacie</span>
-        <span class="job">Élève infirmier(e) 2ᵉ/3ᵉ année</span>
+        <span class="job" data-hover>Infirmier(e) DE</span>
+        <span class="job" data-hover>IDE Bloc</span>
+        <span class="job" data-hover>IBODE</span>
+        <span class="job" data-hover>IADE — Anesthésiste</span>
+        <span class="job" data-hover>Aide-soignant(e)</span>
+        <span class="job" data-hover>Auxiliaire de puériculture</span>
+        <span class="job" data-hover>Brancardier(e)</span>
+        <span class="job" data-hover>Kinésithérapeute</span>
+        <span class="job" data-hover>Manipulateur(trice) radio</span>
+        <span class="job" data-hover>Panseuse / Panseur DE</span>
+        <span class="job" data-hover>Préparateur en pharmacie</span>
+        <span class="job" data-hover>Élève infirmier(e)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TÉMOIGNAGES -->
+  <section class="section testimonials">
+    <div class="container">
+      <div class="section__head">
+        <span class="kicker">Témoignages</span>
+        <h2 class="h-display">Ce qu'en disent celles<br/>et ceux qui ont essayé.</h2>
       </div>
 
-      <p class="jobs__note">Autre spécialité ? Indiquez-la lors de votre inscription.</p>
+      <div class="testimonials-grid">
+        <article class="t-card">
+          <div class="t-card__quote">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M9 6H3v6a3 3 0 0 0 3 3h0v3l3-3a6 6 0 0 0 6-6V6h-6Z"/></svg>
+            <p>« En quelques heures j'avais 3 propositions de missions parfaitement alignées avec mes critères. L'équipe rappelle vite, c'est ça que je cherchais. »</p>
+          </div>
+          <div class="t-card__footer">
+            <div class="t-avatar">C</div>
+            <div>
+              <div class="t-name">Camille L.</div>
+              <div class="t-role">IDE — Paris 13ᵉ</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="t-card">
+          <div class="t-card__quote">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M9 6H3v6a3 3 0 0 0 3 3h0v3l3-3a6 6 0 0 0 6-6V6h-6Z"/></svg>
+            <p>« On les appelle un dimanche soir à 22h, on a un brancardier le lundi matin à 7h. Aucune autre agence ne fait ça. »</p>
+          </div>
+          <div class="t-card__footer">
+            <div class="t-avatar t-avatar--2">D</div>
+            <div>
+              <div class="t-name">Dr. Élise V.</div>
+              <div class="t-role">Directrice clinique — Boulogne</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="t-card">
+          <div class="t-card__quote">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M9 6H3v6a3 3 0 0 0 3 3h0v3l3-3a6 6 0 0 0 6-6V6h-6Z"/></svg>
+            <p>« Travailler avec Hygie, c'est revenir à de l'humain. On nous appelle par notre prénom, on connaît nos contraintes. C'est rare. »</p>
+          </div>
+          <div class="t-card__footer">
+            <div class="t-avatar t-avatar--3">M</div>
+            <div>
+              <div class="t-name">Mathieu R.</div>
+              <div class="t-role">IADE — Paris 12ᵉ</div>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -368,10 +520,10 @@
     <div class="container">
       <div class="section__head">
         <span class="kicker">Inscription</span>
-        <h2>S'inscrire chez Hygie<br/>en 3 étapes</h2>
+        <h2 class="h-display">Démarrer chez Hygie<br/>en <em>3 étapes</em>.</h2>
         <p class="lead">
-          Pas de rendez-vous. Vous venez à l'agence avec vos documents, on
-          fait le point ensemble, et on cale vos premières missions.
+          Sans rendez-vous. Vous venez à l'agence avec vos documents, on cale
+          vos premières missions dans la foulée.
         </p>
       </div>
 
@@ -384,52 +536,14 @@
         <li class="step">
           <div class="step__num">02</div>
           <h4>Venez à l'agence</h4>
-          <p>19 Rue Mogador, Paris 9ᵉ. Ouvert 8h–19h, du lundi au vendredi, sans rendez-vous.</p>
+          <p>19 Rue Mogador, Paris 9ᵉ. Ouvert 8h–19h du lundi au vendredi, sans rendez-vous.</p>
         </li>
         <li class="step">
           <div class="step__num">03</div>
           <h4>Démarrez vos missions</h4>
-          <p>On aligne vos attentes avec les besoins de nos clients, et c'est parti.</p>
+          <p>L'IA propose, l'équipe valide avec vous, et vous démarrez — souvent dès la semaine suivante.</p>
         </li>
       </ol>
-
-      <div class="docs">
-        <div class="docs__col">
-          <h5>Originaux obligatoires</h5>
-          <ul>
-            <li>Diplôme d'État</li>
-            <li>Enregistrement ADELI</li>
-            <li>Pièce d'identité / titre de séjour</li>
-            <li>Carte de Sécurité Sociale</li>
-            <li>Casier judiciaire B3</li>
-          </ul>
-        </div>
-        <div class="docs__col">
-          <h5>Photocopies</h5>
-          <ul>
-            <li>Justificatif de domicile</li>
-            <li>Carnet de vaccination</li>
-            <li>Fiche d'aptitude médicale</li>
-            <li>Permis de conduire</li>
-            <li>CV & certificats de travail</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUOTE -->
-  <section class="section quote-section">
-    <div class="container">
-      <div class="quote">
-        <svg class="quote__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.17 6A6.17 6.17 0 0 0 3 12.17V18h6v-5.83a2.17 2.17 0 0 1 2.17-2.17V6Zm12 0a6.17 6.17 0 0 0-6.17 6.17V18h6v-5.83a2.17 2.17 0 0 1 2.17-2.17V6Z"/></svg>
-        <p>
-          Si vous avez déjà travaillé avec nous, ou si vous envisagez de le
-          faire — venez nous voir. Carole, Fidèle, Camille, Vanessa et toute
-          l'équipe vous accueilleront avec plaisir.
-        </p>
-        <cite>— L'équipe Hygie</cite>
-      </div>
     </div>
   </section>
 
@@ -438,14 +552,14 @@
     <div class="container contact-grid">
       <div class="contact-info">
         <span class="kicker kicker--light">Contact</span>
-        <h2>On en parle ?</h2>
-        <p class="lead">
+        <h2 class="h-display">On en parle ?</h2>
+        <p class="lead lead--light">
           Soignant à la recherche de missions, ou établissement à la recherche
           de renfort — un appel, un message, et c'est lancé.
         </p>
 
         <div class="contact-blocks">
-          <a href="tel:0142660320" class="contact-block">
+          <a href="tel:0142660320" class="contact-block" data-hover>
             <div class="contact-block__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
             </div>
@@ -455,14 +569,14 @@
             </div>
           </a>
 
-          <a href="https://www.google.fr/maps/place/19+Rue+de+Mogador,+75009+Paris" target="_blank" rel="noopener" class="contact-block">
+          <a href="https://www.google.fr/maps/place/19+Rue+de+Mogador,+75009+Paris" target="_blank" rel="noopener" class="contact-block" data-hover>
             <div class="contact-block__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <div>
               <div class="contact-block__label">Agence</div>
               <div class="contact-block__value">19 Rue Mogador, 75009 Paris</div>
-              <div class="contact-block__meta">Havre-Caumartin (3, 9) · Chaussée d'Antin (7, 9) · RER E St-Lazare</div>
+              <div class="contact-block__meta">Havre-Caumartin (3, 9) · Chaussée d'Antin (7, 9)</div>
             </div>
           </a>
 
@@ -472,8 +586,8 @@
             </div>
             <div>
               <div class="contact-block__label">Horaires</div>
-              <div class="contact-block__value">Lundi – Vendredi · 8h à 19h</div>
-              <div class="contact-block__meta">Permanence téléphonique 24h/24, 7j/7</div>
+              <div class="contact-block__value">Lun – Ven · 8h à 19h</div>
+              <div class="contact-block__meta">Permanence téléphonique 24/7</div>
             </div>
           </div>
         </div>
@@ -481,7 +595,7 @@
 
       <form class="contact-form" id="contactForm" novalidate>
         <h3 class="contact-form__title">Demande de rappel</h3>
-        <p class="contact-form__sub">Laissez vos coordonnées, nous vous rappelons.</p>
+        <p class="contact-form__sub">L'équipe vous recontacte sous 24h ouvrées.</p>
 
         <div class="form-row form-row--2">
           <label>
@@ -493,22 +607,11 @@
             </select>
           </label>
           <label>
-            <span>Qualification</span>
-            <select name="qualification" required>
+            <span>Profil</span>
+            <select name="profile" required>
               <option value="" disabled selected>Choisir…</option>
-              <option>Infirmier(e) DE</option>
-              <option>IDE Bloc</option>
-              <option>IBODE</option>
-              <option>IADE — Anesthésiste</option>
-              <option>Aide-soignant(e)</option>
-              <option>Auxiliaire de puériculture</option>
-              <option>Brancardier(e)</option>
-              <option>Kinésithérapeute</option>
-              <option>Manipulateur(trice) radio</option>
-              <option>Panseuse / Panseur DE</option>
-              <option>Préparateur en pharmacie</option>
-              <option>Élève infirmier(e)</option>
-              <option>Établissement de santé</option>
+              <option>Soignant — candidature</option>
+              <option>Établissement — recrutement</option>
               <option>Autre</option>
             </select>
           </label>
@@ -541,7 +644,7 @@
           <textarea name="message" rows="3" placeholder="Disponibilités, attentes, questions…"></textarea>
         </label>
 
-        <button type="submit" class="btn btn--primary btn--lg btn--full">
+        <button type="submit" class="btn btn--primary btn--lg btn--full" data-hover>
           Envoyer ma demande
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </button>
@@ -560,19 +663,19 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <a href="#top" class="brand brand--light">
-          <span class="brand__mark" aria-hidden="true">
-            <svg viewBox="0 0 32 32" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 6v20M6 16h20" />
-            </svg>
+          <span class="brand__mark">
+            <svg viewBox="0 0 32 32" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M11 22V10M11 16h10M21 22V10"/></svg>
           </span>
           <span class="brand__name">Hygie</span>
+          <span class="brand__tag brand__tag--light">.ai</span>
         </a>
-        <p>L'intérim médical et paramédical à Paris et en Île-de-France. Depuis plus de 30 ans.</p>
+        <p>L'intérim médical & paramédical augmenté par l'IA. Paris & Île-de-France. Depuis 30 ans.</p>
       </div>
 
       <div class="footer__col">
         <h6>Hygie</h6>
-        <a href="#about">À propos</a>
+        <a href="#solution">Solution</a>
+        <a href="#ia">IA</a>
         <a href="#metiers">Métiers</a>
         <a href="#process">Inscription</a>
       </div>
@@ -589,10 +692,60 @@
       </div>
     </div>
     <div class="container footer__bottom">
-      <span>© <span id="year"></span> Hygie — Entreprise de Travail Temporaire et de Recrutement</span>
-      <span>Spécialisée médical & paramédical</span>
+      <span>© <span id="year"></span> Hygie — ETT spécialisée médical & paramédical</span>
+      <span class="footer__legal">Mentions légales · CGU · Confidentialité</span>
     </div>
   </footer>
+
+  <!-- CHATBOT FLOTTANT -->
+  <button class="chat-toggle" id="chatToggle" aria-label="Ouvrir le chat" data-hover>
+    <svg class="chat-toggle__icon-open" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <svg class="chat-toggle__icon-close" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    <span class="chat-toggle__badge">IA</span>
+  </button>
+
+  <aside class="chat" id="chat" hidden>
+    <div class="chat__head">
+      <div class="chat__brand">
+        <div class="chat__avatar">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <div>
+          <div class="chat__name">Hygie IA</div>
+          <div class="chat__status"><span class="live-dot"></span> En ligne · répond en moins d'1 min</div>
+        </div>
+      </div>
+      <button class="chat__close" id="chatClose" aria-label="Fermer">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="chat__body" id="chatBody">
+      <div class="chat__msg chat__msg--ai">
+        <div class="chat__bubble">
+          Bonjour 👋 Je suis l'assistant Hygie. Comment puis-je t'aider ?
+        </div>
+      </div>
+      <div class="chat__msg chat__msg--ai">
+        <div class="chat__bubble">
+          Tu peux me poser une question, ou choisir un sujet :
+          <div class="chat__suggestions">
+            <button class="chat__suggestion" data-q="Comment m'inscrire ?">Comment m'inscrire ?</button>
+            <button class="chat__suggestion" data-q="Quels documents apporter ?">Quels documents apporter ?</button>
+            <button class="chat__suggestion" data-q="Vous recrutez en CDI ?">Recrutez-vous en CDI ?</button>
+            <button class="chat__suggestion" data-q="Je suis directeur d'établissement">Je suis directeur d'établissement</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="chat__input" id="chatInput">
+      <input type="text" placeholder="Pose ta question…" autocomplete="off" />
+      <button type="submit" aria-label="Envoyer">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7M12 5v14"/></svg>
+      </button>
+    </form>
+  </aside>
 
   <script src="script.js"></script>
 </body>
