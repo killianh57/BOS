@@ -278,40 +278,40 @@ const matchResults = document.getElementById("m-results");
 
 const POOL = {
   "Infirmier(e) DE": [
-    { n: "Camille L.", x: "8 ans", z: "Paris 13ᵉ" },
-    { n: "Mathieu R.", x: "5 ans", z: "Paris 12ᵉ" },
-    { n: "Aïcha B.", x: "11 ans", z: "Paris 14ᵉ" },
-    { n: "Sarah M.", x: "6 ans", z: "Paris 11ᵉ" },
+    { n: "Camille L.", x: "8 ans", z: "Lyon 4ᵉ" },
+    { n: "Mathieu R.", x: "5 ans", z: "Villeurbanne" },
+    { n: "Aïcha B.", x: "11 ans", z: "Caluire" },
+    { n: "Sarah M.", x: "6 ans", z: "Bordeaux Centre" },
   ],
   "IDE Bloc": [
-    { n: "Élise V.", x: "12 ans", z: "Boulogne" },
-    { n: "Jean-Paul T.", x: "9 ans", z: "Paris 15ᵉ" },
-    { n: "Léa K.", x: "7 ans", z: "Levallois" },
+    { n: "Élise V.", x: "12 ans", z: "Lille" },
+    { n: "Jean-Paul T.", x: "9 ans", z: "Toulouse" },
+    { n: "Léa K.", x: "7 ans", z: "Rennes" },
   ],
   "IBODE": [
-    { n: "Maxime D.", x: "10 ans", z: "Paris 9ᵉ" },
-    { n: "Nadia O.", x: "8 ans", z: "Saint-Cloud" },
-    { n: "Antoine F.", x: "14 ans", z: "Paris 7ᵉ" },
+    { n: "Maxime D.", x: "10 ans", z: "Nantes" },
+    { n: "Nadia O.", x: "8 ans", z: "Strasbourg" },
+    { n: "Antoine F.", x: "14 ans", z: "Marseille" },
   ],
   "IADE — Anesthésiste": [
-    { n: "Pierre G.", x: "15 ans", z: "Paris 5ᵉ" },
-    { n: "Inès C.", x: "8 ans", z: "Vincennes" },
-    { n: "Hugo S.", x: "11 ans", z: "Paris 16ᵉ" },
+    { n: "Pierre G.", x: "15 ans", z: "Nice" },
+    { n: "Inès C.", x: "8 ans", z: "Aix-en-Provence" },
+    { n: "Hugo S.", x: "11 ans", z: "Montpellier" },
   ],
   "Aide-soignant(e)": [
-    { n: "Fatou D.", x: "6 ans", z: "Paris 18ᵉ" },
-    { n: "Karim B.", x: "4 ans", z: "Saint-Denis" },
-    { n: "Mélanie A.", x: "9 ans", z: "Créteil" },
+    { n: "Fatou D.", x: "6 ans", z: "Saint-Denis" },
+    { n: "Karim B.", x: "4 ans", z: "Roubaix" },
+    { n: "Mélanie A.", x: "9 ans", z: "Rouen" },
   ],
   "Kinésithérapeute": [
-    { n: "Thomas N.", x: "7 ans", z: "Paris 8ᵉ" },
-    { n: "Sophie L.", x: "5 ans", z: "Neuilly" },
-    { n: "Yann P.", x: "13 ans", z: "Paris 17ᵉ" },
+    { n: "Thomas N.", x: "7 ans", z: "Grenoble" },
+    { n: "Sophie L.", x: "5 ans", z: "Dijon" },
+    { n: "Yann P.", x: "13 ans", z: "Tours" },
   ],
   "Manipulateur(trice) radio": [
-    { n: "Amélie R.", x: "9 ans", z: "Paris 6ᵉ" },
-    { n: "Lucas T.", x: "4 ans", z: "Issy" },
-    { n: "Mariam H.", x: "10 ans", z: "Paris 19ᵉ" },
+    { n: "Amélie R.", x: "9 ans", z: "Reims" },
+    { n: "Lucas T.", x: "4 ans", z: "Angers" },
+    { n: "Mariam H.", x: "10 ans", z: "Le Havre" },
   ],
 };
 
@@ -497,7 +497,7 @@ const KB = {
   },
   "vous travaillez où": {
     answer:
-      "Paris intra-muros, petite et grande couronne. On couvre toute l'Île-de-France.",
+      "Partout en France — métropole et DROM. Notre siège est au 19 rue Mogador, Paris 9ᵉ, mais on couvre toutes les régions.",
     next: ["Comment m'inscrire ?", "Je suis directeur d'établissement"],
   },
 };

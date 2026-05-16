@@ -1008,6 +1008,178 @@ h5 {
 }
 
 /* =========================================================
+   HISTOIRE — éditorial
+   ========================================================= */
+.section--histoire {
+  background: linear-gradient(180deg, var(--c-bg-2) 0%, var(--c-bg) 100%);
+}
+.histoire-head { max-width: 720px; margin-bottom: 64px; }
+.histoire-grid {
+  display: grid;
+  grid-template-columns: 1.4fr .8fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: start;
+  margin-bottom: clamp(48px, 7vw, 96px);
+}
+.histoire-grid--reverse {
+  grid-template-columns: .8fr 1.4fr;
+}
+@media (max-width: 900px) {
+  .histoire-grid, .histoire-grid--reverse { grid-template-columns: 1fr; gap: 32px; }
+}
+.histoire-grid--reverse .histoire-block { order: 2; }
+.histoire-grid--reverse .histoire-timeline { order: 1; }
+@media (max-width: 900px) {
+  .histoire-grid--reverse .histoire-block { order: 1; }
+  .histoire-grid--reverse .histoire-timeline { order: 2; }
+}
+
+.histoire-block__num {
+  font-family: var(--f-serif);
+  font-size: 28px;
+  color: var(--c-brand);
+  letter-spacing: -.02em;
+  margin-bottom: 14px;
+  opacity: .9;
+}
+.histoire-block h3 {
+  font-size: clamp(28px, 3vw, 36px);
+  margin-bottom: 22px;
+  letter-spacing: -.02em;
+}
+.histoire-block p {
+  font-size: clamp(16px, 1.5vw, 17.5px);
+  color: var(--c-ink-2);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  max-width: 64ch;
+}
+.histoire-block p:last-child { margin-bottom: 0; }
+.histoire-block strong { color: var(--c-ink); font-weight: 600; }
+.histoire-block em { color: var(--c-brand); font-style: italic; }
+
+/* Symbole : coupe d'Hygie */
+.histoire-symbol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: #fff;
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-xl);
+  color: var(--c-brand);
+  position: relative;
+  overflow: hidden;
+}
+.histoire-symbol::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 40%, rgba(13, 111, 111, .06), transparent 70%);
+  pointer-events: none;
+}
+.histoire-symbol svg {
+  width: 70%;
+  max-width: 180px;
+  height: auto;
+  position: relative;
+}
+.histoire-symbol__label {
+  margin-top: 16px;
+  font-size: 11.5px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--c-ink-3);
+  font-weight: 600;
+  position: relative;
+}
+
+/* Timeline */
+.histoire-timeline {
+  position: relative;
+  padding: 24px 20px 24px 32px;
+  background: #fff;
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-xl);
+}
+.histoire-timeline__line {
+  position: absolute;
+  left: 38px; top: 38px; bottom: 38px;
+  width: 1.5px;
+  background: linear-gradient(180deg, var(--c-line), var(--c-brand) 60%, var(--c-mint));
+}
+.histoire-timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 16px;
+  padding: 12px 0;
+}
+.histoire-timeline__dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--c-brand);
+  margin-top: 4px;
+  z-index: 1;
+}
+.histoire-timeline__dot--active {
+  background: var(--c-brand);
+  box-shadow: 0 0 0 4px rgba(13, 111, 111, .15);
+}
+.histoire-timeline__year {
+  font-family: var(--f-serif);
+  font-size: 17px;
+  color: var(--c-ink);
+  letter-spacing: -.01em;
+  margin-bottom: 2px;
+}
+.histoire-timeline__label {
+  font-size: 13.5px;
+  color: var(--c-ink-3);
+  line-height: 1.45;
+}
+
+/* Devise finale */
+.histoire-quote {
+  max-width: 760px;
+  margin: clamp(40px, 6vw, 80px) auto 0;
+  padding: clamp(28px, 4vw, 48px);
+  background: var(--c-ink);
+  color: #fff;
+  border-radius: var(--r-xl);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.histoire-quote::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 0%, rgba(96, 224, 192, .14), transparent 60%);
+  pointer-events: none;
+}
+.histoire-quote p {
+  font-family: var(--f-serif);
+  font-size: clamp(22px, 3.2vw, 32px);
+  font-style: italic;
+  letter-spacing: -.02em;
+  line-height: 1.3;
+  color: #fff;
+  margin-bottom: 16px;
+  position: relative;
+}
+.histoire-quote cite {
+  font-style: normal;
+  font-size: 11.5px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--c-mint);
+  position: relative;
+}
+
+/* =========================================================
    SOLUTION
    ========================================================= */
 .section--solution { background: var(--c-bg); }
