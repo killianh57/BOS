@@ -367,7 +367,6 @@ h5 {
   top: 72px; left: 0; right: 0;
   background: #fff;
   padding: 24px var(--pad-x);
-  display: flex;
   flex-direction: column;
   gap: 4px;
   box-shadow: 0 24px 40px -16px rgba(10, 19, 32, .16);
@@ -376,8 +375,10 @@ h5 {
   opacity: 0;
   transition: transform .3s ease, opacity .25s ease;
   z-index: 99;
+  pointer-events: none;
 }
-.mobile-menu:not([hidden]) { display: flex; }
+.mobile-menu[hidden] { display: none !important; }
+.mobile-menu:not([hidden]) { display: flex; pointer-events: auto; }
 .mobile-menu.is-open { transform: translateY(0); opacity: 1; }
 .mobile-menu a {
   font-size: 17px;
@@ -1234,13 +1235,20 @@ h5 {
   font-weight: 500;
   color: var(--c-ink);
   transition: all .25s;
-  cursor: default;
+  cursor: pointer;
+  text-decoration: none;
 }
 .job:hover {
   border-color: var(--c-ink);
   background: var(--c-ink);
   color: var(--c-mint);
   transform: translateY(-2px);
+}
+.jobs__note {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 13.5px;
+  color: var(--c-ink-3);
 }
 
 /* =========================================================
@@ -1327,6 +1335,14 @@ h5 {
 }
 .step h4 { margin-bottom: 8px; font-size: 18px; }
 .step p { color: var(--c-ink-3); font-size: 14.5px; line-height: 1.55; }
+
+.steps__cta {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
 
 /* =========================================================
    CONTACT

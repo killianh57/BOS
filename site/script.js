@@ -362,6 +362,26 @@ if (matchBtn && matchResults) {
 }
 
 // ----------------------------------------------------------
+// Clic sur un métier → pré-remplit le formulaire avec la qualif
+// ----------------------------------------------------------
+document.querySelectorAll(".job[data-prefill]").forEach((j) => {
+  j.addEventListener("click", () => {
+    const qual = j.dataset.prefill;
+    setTimeout(() => {
+      const profileSelect = document.querySelector('.contact-form select[name="profile"]');
+      if (profileSelect) {
+        profileSelect.value = "Soignant — candidature";
+      }
+      const msg = document.querySelector('.contact-form textarea[name="message"]');
+      if (msg) {
+        msg.value = `Bonjour, je suis ${qual} et je souhaite m'inscrire chez Hygie. Disponibilités : `;
+        msg.focus();
+      }
+    }, 600);
+  });
+});
+
+// ----------------------------------------------------------
 // FORM CONTACT
 // ----------------------------------------------------------
 const form = document.getElementById("contactForm");
