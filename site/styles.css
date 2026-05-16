@@ -354,10 +354,12 @@ h5 {
 .nav__burger[aria-expanded="true"] span:first-child { transform: translateY(3.5px) rotate(45deg); }
 .nav__burger[aria-expanded="true"] span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
 
-@media (max-width: 980px) { .nav__links { display: none; } }
+@media (max-width: 980px) {
+  .nav__links { display: none; }
+  .nav__burger { display: flex; }
+}
 @media (max-width: 720px) {
   .nav__cta .btn, .nav__cta .phone-link span { display: none; }
-  .nav__burger { display: flex; }
 }
 
 .mobile-menu {
@@ -998,7 +1000,11 @@ h5 {
   gap: clamp(40px, 6vw, 80px);
   align-items: start;
 }
-@media (max-width: 980px) { .ia-grid { grid-template-columns: 1fr; } }
+.ia-text { position: sticky; top: 100px; align-self: start; }
+@media (max-width: 980px) {
+  .ia-grid { grid-template-columns: 1fr; }
+  .ia-text { position: static; }
+}
 
 .ia-features { margin-top: 40px; }
 .ia-feature {
@@ -1716,6 +1722,53 @@ a.contact-block:hover {
 @media (max-width: 480px) {
   .chat { width: calc(100vw - 24px); right: 12px; bottom: 92px; }
   .chat-toggle { right: 16px; bottom: 16px; }
+}
+
+/* =========================================================
+   ANIMATIONS GLOBALES
+   ========================================================= */
+
+/* Indicateur de scroll en haut */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--c-brand), var(--c-mint));
+  z-index: 200;
+  transition: width .15s linear;
+  pointer-events: none;
+}
+
+/* Word reveal */
+.word-anim {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+.word-anim > span {
+  display: inline-block;
+  transform: translateY(110%);
+  opacity: 0;
+  transition: transform .9s cubic-bezier(.22, 1, .36, 1), opacity .7s ease;
+}
+.word-anim.in > span { transform: translateY(0); opacity: 1; }
+
+/* Tilt 3D */
+[data-tilt] {
+  transform-style: preserve-3d;
+  transition: transform .4s cubic-bezier(.22, 1, .36, 1);
+  will-change: transform;
+}
+
+/* Magnetic button */
+[data-magnetic] {
+  transition: transform .35s cubic-bezier(.22, 1, .36, 1), background .25s, box-shadow .25s;
+  will-change: transform;
+}
+
+@media (hover: none), (max-width: 768px) {
+  [data-tilt], [data-magnetic] { transform: none !important; }
 }
 
 /* =========================================================

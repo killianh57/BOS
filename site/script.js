@@ -4,6 +4,161 @@
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
+const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const isTouch = window.matchMedia("(hover: none)").matches || window.innerWidth < 768;
+
+// ----------------------------------------------------------
+// Indicateur de progression scroll
+// ----------------------------------------------------------
+const scrollProgress = document.getElementById("scrollProgress");
+const updateProgress = () => {
+  const h = document.documentElement;
+  const scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight);
+  scrollProgress.style.width = `${Math.min(scrolled * 100, 100)}%`;
+};
+window.addEventListener("scroll", updateProgress, { passive: true });
+updateProgress();
+
+// ----------------------------------------------------------
+// Parallax léger sur les éléments [data-parallax]
+// ----------------------------------------------------------
+if (!prefersReduced) {
+  const parallaxEls = document.querySelectorAll("[data-parallax]");
+  let parallaxTicking = false;
+  const updateParallax = () => {
+    const sy = window.scrollY;
+    parallaxEls.forEach((el) => {
+      const speed = parseFloat(el.dataset.parallax) || 0.3;
+      el.style.transform = `translate3d(0, ${sy * speed * -1}px, 0)`;
+    });
+    parallaxTicking = false;
+  };
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!parallaxTicking) {
+        requestAnimationFrame(updateParallax);
+        parallaxTicking = true;
+      }
+    },
+    { passive: true }
+  );
+}
+
+// ----------------------------------------------------------
+// Word-by-word reveal sur le titre hero
+// ----------------------------------------------------------
+const splitTitle = (el) => {
+  const lines = el.querySelectorAll(".t-line");
+  lines.forEach((line, lineIdx) => {
+    const html = line.innerHTML;
+    // Parse les enfants : du texte + des <em>
+    const tmp = document.createElement("div");
+    tmp.innerHTML = html;
+    const result = [];
+    let wordCount = 0;
+    const walk = (node, wrapTag) => {
+      for (const child of node.childNodes) {
+        if (child.nodeType === Node.TEXT_NODE) {
+          const words = child.textContent.split(/(\s+)/);
+          for (const w of words) {
+            if (!w.trim()) {
+              result.push(w);
+              continue;
+            }
+            const delay = (lineIdx * 0.08 + wordCount * 0.035).toFixed(3);
+            const inner = `<span style="transition-delay:${delay}s">${w}</span>`;
+            const wrapped = `<span class="word-anim">${
+              wrapTag ? `<${wrapTag}>${inner}</${wrapTag}>` : inner
+            }</span>`;
+            result.push(wrapped);
+            wordCount++;
+          }
+        } else if (child.nodeType === Node.ELEMENT_NODE) {
+          walk(child, child.tagName.toLowerCase());
+        }
+      }
+    };
+    walk(tmp, null);
+    line.innerHTML = result.join("");
+  });
+};
+
+const heroTitle = document.querySelector("[data-split]");
+if (heroTitle) {
+  splitTitle(heroTitle);
+  // Animation au load
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      heroTitle.querySelectorAll(".word-anim").forEach((w) => w.classList.add("in"));
+    }, 100);
+  });
+}
+
+// ----------------------------------------------------------
+// Magnetic buttons (desktop only)
+// ----------------------------------------------------------
+if (!isTouch && !prefersReduced) {
+  document.querySelectorAll("[data-magnetic]").forEach((el) => {
+    let raf = null;
+    let tx = 0, ty = 0, cx = 0, cy = 0;
+    const strength = 0.3;
+    const lerpVal = 0.18;
+
+    const onMove = (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      tx = x * strength;
+      ty = y * strength;
+      if (!raf) loop();
+    };
+    const onLeave = () => {
+      tx = 0;
+      ty = 0;
+      if (!raf) loop();
+    };
+    const loop = () => {
+      cx += (tx - cx) * lerpVal;
+      cy += (ty - cy) * lerpVal;
+      el.style.transform = `translate3d(${cx.toFixed(2)}px, ${cy.toFixed(2)}px, 0)`;
+      if (Math.abs(tx - cx) > 0.1 || Math.abs(ty - cy) > 0.1) {
+        raf = requestAnimationFrame(loop);
+      } else {
+        cx = tx;
+        cy = ty;
+        el.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
+        raf = null;
+      }
+    };
+
+    el.addEventListener("mousemove", onMove);
+    el.addEventListener("mouseleave", onLeave);
+  });
+}
+
+// ----------------------------------------------------------
+// Tilt 3D sur cards (desktop only)
+// ----------------------------------------------------------
+if (!isTouch && !prefersReduced) {
+  document.querySelectorAll("[data-tilt]").forEach((el) => {
+    const maxRot = 4; // degrés max
+    const onMove = (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      el.style.transform = `perspective(900px) rotateX(${(-y * maxRot).toFixed(
+        2
+      )}deg) rotateY(${(x * maxRot).toFixed(2)}deg) translateY(-4px)`;
+    };
+    const onLeave = () => {
+      el.style.transform = "";
+    };
+    el.addEventListener("mousemove", onMove);
+    el.addEventListener("mouseleave", onLeave);
+  });
+}
+
 // ----------------------------------------------------------
 // Nav scroll shadow
 // ----------------------------------------------------------

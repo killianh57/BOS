@@ -27,6 +27,9 @@
     <div class="cursor__ring"></div>
   </div>
 
+  <!-- Indicateur de progression scroll -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
   <!-- Bruit / grain texture -->
   <div class="noise" aria-hidden="true"></div>
 
@@ -83,9 +86,9 @@
   <!-- HERO -->
   <section class="hero" id="top">
     <div class="hero__bg" aria-hidden="true">
-      <div class="hero__grid"></div>
-      <div class="hero__glow hero__glow--1"></div>
-      <div class="hero__glow hero__glow--2"></div>
+      <div class="hero__grid" data-parallax="0.25"></div>
+      <div class="hero__glow hero__glow--1" data-parallax="0.6"></div>
+      <div class="hero__glow hero__glow--2" data-parallax="0.45"></div>
     </div>
 
     <div class="container hero__inner">
@@ -96,7 +99,7 @@
         </span>
       </div>
 
-      <h1 class="hero__title">
+      <h1 class="hero__title" data-split>
         <span class="t-line">L'intérim médical,</span>
         <span class="t-line"><em>augmenté</em> par l'intelligence</span>
         <span class="t-line">artificielle.</span>
@@ -109,11 +112,11 @@
       </p>
 
       <div class="hero__ctas">
-        <a href="#match" class="btn btn--primary btn--lg" data-hover>
+        <a href="#match" class="btn btn--primary btn--lg" data-hover data-magnetic>
           Lancer un match
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
-        <a href="#ia" class="btn btn--ghost btn--lg" data-hover>
+        <a href="#ia" class="btn btn--ghost btn--lg" data-hover data-magnetic>
           Voir comment ça marche
         </a>
       </div>
@@ -269,7 +272,7 @@
       </div>
 
       <div class="solution-grid">
-        <article class="solution-card solution-card--talent">
+        <article class="solution-card solution-card--talent" data-tilt>
           <div class="solution-card__head">
             <span class="solution-card__role">Soignants</span>
             <span class="solution-card__icon">
@@ -289,7 +292,7 @@
           </a>
         </article>
 
-        <article class="solution-card solution-card--client">
+        <article class="solution-card solution-card--client" data-tilt>
           <div class="solution-card__head">
             <span class="solution-card__role">Établissements</span>
             <span class="solution-card__icon">
