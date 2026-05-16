@@ -369,9 +369,14 @@ document.querySelectorAll(".job[data-prefill]").forEach((j) => {
     const qual = j.dataset.prefill;
     setTimeout(() => {
       const profileSelect = document.querySelector('.contact-form select[name="profile"]');
-      if (profileSelect) {
-        profileSelect.value = "Soignant — candidature";
+      if (profileSelect) profileSelect.value = "Soignant — candidature";
+
+      const qualSelect = document.querySelector('.contact-form select[name="qualification"]');
+      if (qualSelect) {
+        const opt = [...qualSelect.options].find((o) => o.value === qual);
+        if (opt) qualSelect.value = qual;
       }
+
       const msg = document.querySelector('.contact-form textarea[name="message"]');
       if (msg) {
         msg.value = `Bonjour, je suis ${qual} et je souhaite m'inscrire chez Hygie. Disponibilités : `;
@@ -399,21 +404,32 @@ if (form) {
       firstname: data.get("firstname"),
       lastname: data.get("lastname"),
       phone: data.get("phone"),
+      phone2: data.get("phone2") || "",
       email: data.get("email"),
+      address: data.get("address") || "",
+      postal: data.get("postal") || "",
+      city: data.get("city") || "",
+      qualification: data.get("qualification") || "",
       message: data.get("message") || "",
     };
     const subject = `Hygie — ${fields.profile} — ${fields.firstname} ${fields.lastname}`;
+    const addressLine = [fields.address, [fields.postal, fields.city].filter(Boolean).join(" ")]
+      .filter(Boolean)
+      .join(", ");
     const body = [
       `Civilité : ${fields.title}`,
       `Profil : ${fields.profile}`,
       `Nom : ${fields.lastname}`,
       `Prénom : ${fields.firstname}`,
+      fields.qualification ? `Qualification : ${fields.qualification}` : null,
       `Téléphone : ${fields.phone}`,
+      fields.phone2 ? `Autre téléphone : ${fields.phone2}` : null,
       `Email : ${fields.email}`,
+      addressLine ? `Adresse : ${addressLine}` : null,
       ``,
       `Message :`,
       fields.message,
-    ].join("\n");
+    ].filter(line => line !== null).join("\n");
     window.location.href = `mailto:contact@hygie-interim.fr?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
