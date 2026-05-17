@@ -13,6 +13,61 @@
   <meta property="og:locale" content="fr_FR" />
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23051018'/%3E%3Cpath d='M11 22V10M11 16h10M21 22V10' stroke='%2360e0c0' stroke-width='2.6' stroke-linecap='round' fill='none'/%3E%3C/svg%3E" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Hygie" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EmploymentAgency",
+    "name": "Hygie",
+    "alternateName": "HYGIE - TT",
+    "description": "Agence d'intérim et de recrutement spécialisée dans le personnel médical et paramédical, augmentée par l'IA. Partout en France. 30+ ans d'expérience, permanence 24/7.",
+    "url": "https://www.hygie-interim.fr",
+    "telephone": "+33-1-42-66-03-20",
+    "email": "contact@hygie-interim.fr",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "19 rue Mogador",
+      "addressLocality": "Paris",
+      "postalCode": "75009",
+      "addressCountry": "FR"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 48.8747, "longitude": 2.3312 },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00", "closes": "19:00"
+    }],
+    "areaServed": { "@type": "Country", "name": "France" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type":"Question", "name":"Comment m'inscrire chez Hygie ?",
+        "acceptedAnswer":{ "@type":"Answer",
+        "text":"L'inscription se fait à l'agence sans rendez-vous : 19 rue Mogador, Paris 9ᵉ, du lundi au vendredi de 8h à 19h. Apportez diplômes, ADELI, pièce d'identité, casier judiciaire B3 et CV. Inscription en 30 min." } },
+      { "@type":"Question", "name":"Quels métiers Hygie recrute-t-elle ?",
+        "acceptedAnswer":{ "@type":"Answer",
+        "text":"Toutes les spécialités médicales et paramédicales : IDE, IBODE, IADE, aide-soignant(e), auxiliaire de puériculture, brancardier, kinésithérapeute, manipulateur radio, préparateur en pharmacie." } },
+      { "@type":"Question", "name":"Hygie recrute-t-elle en CDI ?",
+        "acceptedAnswer":{ "@type":"Answer",
+        "text":"Oui — nous proposons intérim, CDD et CDI selon vos préférences. De nombreuses missions intérim évoluent vers du CDI." } },
+      { "@type":"Question", "name":"Dans quelles régions Hygie travaille-t-elle ?",
+        "acceptedAnswer":{ "@type":"Answer",
+        "text":"Hygie intervient partout en France, métropole et DROM. Notre siège est à Paris mais nous proposons des missions dans toutes les régions." } },
+      { "@type":"Question", "name":"Êtes-vous joignables le soir et le week-end ?",
+        "acceptedAnswer":{ "@type":"Answer",
+        "text":"Oui, permanence téléphonique 24h/24 et 7j/7 au 01 42 66 03 20." } }
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,6 +75,8 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <a href="#top" class="skip-link">Aller au contenu</a>
 
   <!-- Curseur custom -->
   <div class="cursor" id="cursor" aria-hidden="true">
@@ -49,9 +106,9 @@
       <nav class="nav__links">
         <a href="#about" data-hover>À propos</a>
         <a href="#histoire" data-hover>Histoire</a>
-        <a href="#ia" data-hover>IA</a>
         <a href="#metiers" data-hover>Métiers</a>
-        <a href="#process" data-hover>Inscription</a>
+        <a href="#salaire" data-hover>Salaire</a>
+        <a href="#faq" data-hover>FAQ</a>
         <a href="#contact" data-hover>Contact</a>
       </nav>
 
@@ -74,9 +131,9 @@
     <div class="mobile-menu" id="mobileMenu" hidden>
       <a href="#about">À propos</a>
       <a href="#histoire">Histoire</a>
-      <a href="#ia">IA</a>
       <a href="#metiers">Métiers</a>
-      <a href="#process">Inscription</a>
+      <a href="#salaire">Salaire</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
       <div class="mobile-menu__cta">
         <a href="tel:0142660320" class="btn btn--ghost btn--full">01 42 66 03 20</a>
@@ -699,6 +756,195 @@
     </div>
   </section>
 
+  <!-- CALCULATEUR DE RÉMUNÉRATION -->
+  <section id="salaire" class="section section--calc">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <span class="kicker">Outil</span>
+        <h2 class="h-display">Estime ta <em>rémunération</em>.</h2>
+        <p class="lead">
+          Sélectionne ton métier et tes critères — l'outil te donne une estimation
+          brute indicative en quelques secondes.
+        </p>
+      </div>
+
+      <div class="calc">
+        <div class="calc__inputs">
+          <label class="calc__field">
+            <span>Métier</span>
+            <select id="calc-job">
+              <option value="14.50">Infirmier(e) DE</option>
+              <option value="18.00">IDE Bloc</option>
+              <option value="19.50">IBODE</option>
+              <option value="22.00">IADE — Anesthésiste</option>
+              <option value="12.50">Aide-soignant(e)</option>
+              <option value="13.00">Auxiliaire de puériculture</option>
+              <option value="11.80">Brancardier(e)</option>
+              <option value="17.00">Kinésithérapeute</option>
+              <option value="15.50">Manipulateur(trice) radio</option>
+              <option value="14.20">Panseuse / Panseur DE</option>
+              <option value="13.50">Préparateur en pharmacie</option>
+            </select>
+          </label>
+
+          <label class="calc__field">
+            <span>Expérience</span>
+            <select id="calc-xp">
+              <option value="1.00">0 – 2 ans</option>
+              <option value="1.10">3 – 5 ans</option>
+              <option value="1.20">6 – 10 ans</option>
+              <option value="1.30">+ 10 ans</option>
+            </select>
+          </label>
+
+          <label class="calc__field">
+            <span>Type de service</span>
+            <select id="calc-shift">
+              <option value="1.00">Jour</option>
+              <option value="1.25">Nuit</option>
+              <option value="1.50">Dimanche / férié</option>
+              <option value="1.75">Nuit + dimanche</option>
+            </select>
+          </label>
+
+          <label class="calc__field">
+            <span>Heures par semaine</span>
+            <input type="range" id="calc-hours" min="10" max="50" value="35" step="1" />
+            <span class="calc__range-val" id="calc-hours-val">35h</span>
+          </label>
+        </div>
+
+        <div class="calc__result">
+          <div class="calc__result-block">
+            <div class="calc__result-label">Brut horaire estimé</div>
+            <div class="calc__result-value" id="calc-hourly">14,50 €</div>
+          </div>
+          <div class="calc__result-divider"></div>
+          <div class="calc__result-block">
+            <div class="calc__result-label">Brut mensuel estimé</div>
+            <div class="calc__result-value calc__result-value--big" id="calc-monthly">2&nbsp;205 €</div>
+            <div class="calc__result-meta">+ 10 % indemnité de fin de mission + 10 % congés payés</div>
+          </div>
+        </div>
+
+        <p class="calc__note">
+          Estimation indicative non contractuelle. Les rémunérations réelles dépendent de la
+          convention collective, de l'établissement et des primes spécifiques. Pour un chiffrage
+          précis adapté à votre profil, contactez-nous.
+        </p>
+
+        <div class="calc__cta">
+          <a href="#contact" class="btn btn--primary btn--lg" data-hover data-magnetic>
+            Recevoir une offre personnalisée
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section section--faq">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <span class="kicker">Questions fréquentes</span>
+        <h2 class="h-display">Tout ce que tu te demandes,<br/><em>en clair</em>.</h2>
+      </div>
+
+      <div class="faq" itemscope itemtype="https://schema.org/FAQPage">
+        <details class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" open>
+          <summary itemprop="name">
+            Comment s'inscrire chez Hygie ?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">L'inscription se fait à l'agence, <strong>sans rendez-vous</strong> : 19 rue Mogador, Paris 9ᵉ, du lundi au vendredi de 8h à 19h. Apporte tes diplômes, ADELI, pièce d'identité, casier judiciaire B3 et CV. Inscription en 30 min.</p>
+          </div>
+        </details>
+
+        <details class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">
+            Quels documents apporter le jour de l'inscription ?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text"><strong>Originaux obligatoires</strong> : diplôme d'État, enregistrement ADELI, pièce d'identité ou titre de séjour valide, carte de Sécurité Sociale (ou Carte Vitale), extrait de casier judiciaire B3. <strong>Photocopies utiles</strong> : justificatif de domicile, carnet de vaccination, fiche d'aptitude médicale, permis de conduire, CV, certificats de travail, attestation AFGSU.</p>
+          </div>
+        </details>
+
+        <details class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">
+            Quels métiers et spécialités recrutez-vous ?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Toutes les spécialités médicales et paramédicales : Infirmier(e) DE, IDE Bloc, IBODE, IADE, aide-soignant(e), auxiliaire de puériculture DE, brancardier(e), kinésithérapeute, manipulateur(trice) radio, panseuse / panseur DE, préparateur en pharmacie, élève infirmier(e). Si ta spécialité n'est pas listée, contacte-nous, on en discute.</p>
+          </div>
+        </details>
+
+        <details class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">
+            Recrutez-vous en CDD ou en CDI ?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Oui — Hygie propose de l'intérim, du CDD et du CDI selon les besoins de nos clients et tes préférences. De nombreuses missions intérim peuvent évoluer vers un CDI selon ton souhait et celui de l'établissement.</p>
+          </div>
+        </details>
+
+        <details class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">
+            Dans quelles régions Hygie travaille-t-elle ?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Hygie intervient <strong>partout en France</strong>, métropole et DROM. Notre siège est à Paris (19 rue Mogador) mais nous proposons des missions dans toutes les régions, des hôpitaux universitaires aux EHPAD ruraux.</p>
+          </div>
+        </details>
+
+        <details class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">
+            Êtes-vous joignables le soir et le week-end ?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Oui, notre <strong>permanence téléphonique est assurée 24h/24 et 7j/7</strong> au 01 42 66 03 20 par notre équipe permanente. Que ce soit pour une urgence de planning ou une question administrative, une vraie personne vous répond.</p>
+          </div>
+        </details>
+
+        <details class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">
+            Comment fonctionne l'IA de matching ?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Notre IA analyse en continu les profils des soignants inscrits (qualification, expérience, zone, disponibilités, préférences) et les besoins des établissements. Quand une mission arrive, elle propose les profils les plus pertinents en quelques secondes. <strong>Toute mission est ensuite validée par un consultant humain</strong> avant d'être confirmée.</p>
+          </div>
+        </details>
+
+        <details class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">
+            Comment sont calculés les salaires en intérim médical ?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Le salaire dépend de la qualification, de l'expérience, du type de service (jour, nuit, dimanche, férié) et de la convention collective de l'établissement. Tu peux <a href="#salaire">estimer ta rémunération en quelques secondes avec notre calculateur</a>. À cela s'ajoutent l'<strong>indemnité de fin de mission (10 %)</strong> et les <strong>congés payés (10 %)</strong>.</p>
+          </div>
+        </details>
+
+        <details class="faq__item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <summary itemprop="name">
+            Je suis directeur d'établissement, comment recruter ?
+            <span class="faq__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Appelez-nous au 01 42 66 03 20 ou utilisez le formulaire de contact en sélectionnant le profil "Établissement — recrutement". Un consultant senior vous rappelle dans la journée. Nous couvrons toutes les spécialités, en intérim, CDD ou CDI, avec une <strong>réponse rapide même la nuit ou le week-end</strong>.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- PROCESS -->
   <section id="process" class="section section--alt">
     <div class="container">
@@ -958,9 +1204,39 @@
     </div>
     <div class="container footer__bottom">
       <span>© <span id="year"></span> Hygie — ETT spécialisée médical & paramédical</span>
-      <span class="footer__legal">Mentions légales · CGU · Confidentialité</span>
+      <span class="footer__legal">
+        <a href="mentions-legales.html">Mentions légales</a> ·
+        <a href="cgu.html">CGU</a> ·
+        <a href="confidentialite.html">Confidentialité</a> ·
+        <button type="button" class="footer__legal-btn" id="cookieReopen">Cookies</button>
+      </span>
     </div>
   </footer>
+
+  <!-- Bouton WhatsApp flottant -->
+  <a href="https://wa.me/33142660320" target="_blank" rel="noopener" class="wa-btn" aria-label="Discuter sur WhatsApp" data-hover>
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+      <path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.9 11.9L4 20l4.22-1.1a7.94 7.94 0 0 0 3.83.98h.01a7.94 7.94 0 0 0 7.94-7.93 7.88 7.88 0 0 0-2.4-5.63zm-5.55 12.2h-.01a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.5.65.67-2.44-.16-.25a6.59 6.59 0 1 1 12.2-3.51 6.6 6.6 0 0 1-6.6 6.61zm3.62-4.94c-.2-.1-1.17-.58-1.36-.64-.18-.07-.31-.1-.45.1-.13.2-.51.64-.63.78-.12.13-.23.15-.43.05a5.43 5.43 0 0 1-1.59-.98 6 6 0 0 1-1.1-1.37c-.12-.2-.01-.31.08-.4.09-.09.2-.23.3-.35.1-.12.13-.2.2-.34.07-.13.03-.25-.02-.35l-.61-1.48c-.16-.39-.32-.34-.45-.34l-.39-.01a.75.75 0 0 0-.54.25 2.27 2.27 0 0 0-.71 1.7c0 1 .73 1.97.83 2.1.1.14 1.43 2.2 3.48 3.08 1.69.72 2.04.58 2.4.55a2.05 2.05 0 0 0 1.36-.96c.17-.34.17-.62.12-.69-.05-.07-.18-.11-.38-.21z"/>
+    </svg>
+    <span class="wa-btn__label">WhatsApp</span>
+  </a>
+
+  <!-- Bannière cookies -->
+  <aside class="cookie-banner" id="cookieBanner" hidden role="dialog" aria-labelledby="cookie-title" aria-modal="false">
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__text">
+        <h3 id="cookie-title" class="cookie-banner__title">🍪 Cookies & confidentialité</h3>
+        <p>
+          Ce site utilise un minimum de cookies pour son bon fonctionnement. Aucun cookie de
+          tracking ou publicité tiers. <a href="confidentialite.html#cookies">En savoir plus</a>.
+        </p>
+      </div>
+      <div class="cookie-banner__actions">
+        <button type="button" class="btn btn--ghost btn--sm" id="cookieReject">Refuser</button>
+        <button type="button" class="btn btn--primary btn--sm" id="cookieAccept">Accepter</button>
+      </div>
+    </div>
+  </aside>
 
   <!-- CHATBOT FLOTTANT -->
   <button class="chat-toggle" id="chatToggle" aria-label="Ouvrir le chat" data-hover>

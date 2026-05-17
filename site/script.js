@@ -579,3 +579,76 @@ chatInput.addEventListener("submit", (e) => {
   input.value = "";
   askChat(v);
 });
+
+// ----------------------------------------------------------
+// CALCULATEUR DE RÉMUNÉRATION
+// ----------------------------------------------------------
+const calcJob = document.getElementById("calc-job");
+const calcXp = document.getElementById("calc-xp");
+const calcShift = document.getElementById("calc-shift");
+const calcHours = document.getElementById("calc-hours");
+const calcHoursVal = document.getElementById("calc-hours-val");
+const calcHourly = document.getElementById("calc-hourly");
+const calcMonthly = document.getElementById("calc-monthly");
+
+if (calcJob && calcXp && calcShift && calcHours) {
+  const fmtEUR = (n) =>
+    new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" }).format(n);
+
+  const updateCalc = () => {
+    const base = parseFloat(calcJob.value);
+    const xp = parseFloat(calcXp.value);
+    const shift = parseFloat(calcShift.value);
+    const hours = parseInt(calcHours.value, 10);
+    const hourly = base * xp * shift;
+    const weekly = hourly * hours;
+    const monthly = weekly * 4.33;
+
+    calcHoursVal.textContent = `${hours}h`;
+    calcHourly.textContent = fmtEUR(hourly);
+    calcMonthly.textContent = fmtEUR(Math.round(monthly));
+  };
+
+  [calcJob, calcXp, calcShift, calcHours].forEach((el) =>
+    el.addEventListener("input", updateCalc)
+  );
+  updateCalc();
+}
+
+// ----------------------------------------------------------
+// BANNIÈRE COOKIES
+// ----------------------------------------------------------
+const cookieBanner = document.getElementById("cookieBanner");
+const cookieAccept = document.getElementById("cookieAccept");
+const cookieReject = document.getElementById("cookieReject");
+const cookieReopen = document.getElementById("cookieReopen");
+
+const COOKIE_KEY = "hygie-cookie-consent";
+
+const showCookie = () => {
+  cookieBanner.removeAttribute("hidden");
+  requestAnimationFrame(() => cookieBanner.classList.add("is-open"));
+};
+const hideCookie = (value) => {
+  cookieBanner.classList.remove("is-open");
+  setTimeout(() => cookieBanner.setAttribute("hidden", ""), 400);
+  try {
+    localStorage.setItem(COOKIE_KEY, value);
+  } catch (e) {}
+};
+
+if (cookieBanner) {
+  let stored = null;
+  try {
+    stored = localStorage.getItem(COOKIE_KEY);
+  } catch (e) {}
+  if (!stored) {
+    setTimeout(showCookie, 1200);
+  }
+  cookieAccept?.addEventListener("click", () => hideCookie("accepted"));
+  cookieReject?.addEventListener("click", () => hideCookie("rejected"));
+  cookieReopen?.addEventListener("click", (e) => {
+    e.preventDefault();
+    showCookie();
+  });
+}

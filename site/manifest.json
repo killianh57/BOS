@@ -1,0 +1,25 @@
+{
+  "name": "Hygie — Intérim médical augmenté par l'IA",
+  "short_name": "Hygie",
+  "description": "Intérim médical et paramédical, partout en France. Matching IA + équipe humaine 24/7.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a1320",
+  "theme_color": "#0a1320",
+  "lang": "fr",
+  "scope": "/",
+  "categories": ["business", "medical", "productivity"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='40' fill='%23051018'/%3E%3Cpath d='M66 132V60M66 96h60M126 132V60' stroke='%2360e0c0' stroke-width='14' stroke-linecap='round' fill='none'/%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='100' fill='%23051018'/%3E%3Cpath d='M176 352V160M176 256h160M336 352V160' stroke='%2360e0c0' stroke-width='36' stroke-linecap='round' fill='none'/%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
