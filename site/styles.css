@@ -56,7 +56,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 72px;
 }
 body {
   margin: 0;
@@ -150,7 +150,7 @@ h5 {
    ========================================================= */
 .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad-x); }
 
-.section { padding: clamp(72px, 11vw, 160px) 0; position: relative; }
+.section { padding: clamp(32px, 5vw, 64px) 0 clamp(72px, 11vw, 140px); position: relative; }
 .section--alt { background: var(--c-bg-2); }
 .section--dark {
   background: var(--c-dark);
@@ -158,7 +158,7 @@ h5 {
 }
 .section--dark h2, .section--dark h3, .section--dark h4 { color: #fff; }
 
-.section__head { max-width: 760px; margin-bottom: 64px; }
+.section__head { max-width: 760px; margin-bottom: clamp(36px, 5vw, 56px); }
 .section__head--center { margin-inline: auto; text-align: center; }
 .section__head--center .lead { margin-inline: auto; }
 
@@ -1013,7 +1013,7 @@ h5 {
 .section--histoire {
   background: linear-gradient(180deg, var(--c-bg-2) 0%, var(--c-bg) 100%);
 }
-.histoire-head { max-width: 720px; margin-bottom: 64px; }
+.histoire-head { max-width: 720px; margin-bottom: clamp(36px, 5vw, 56px); }
 .histoire-grid {
   display: grid;
   grid-template-columns: 1.4fr .8fr;
@@ -1285,7 +1285,7 @@ h5 {
   background: var(--c-dark);
   color: rgba(255, 255, 255, .85);
   overflow: hidden;
-  padding: clamp(72px, 11vw, 160px) 0;
+  padding: clamp(32px, 5vw, 64px) 0 clamp(72px, 11vw, 140px);
   position: relative;
 }
 .ia-bg {
