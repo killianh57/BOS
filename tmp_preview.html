@@ -1594,13 +1594,16 @@ footer p.signature {
 .an-n{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:var(--green-deep,#004F38);color:#fff;font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:2px;}
 .anatomy-legend strong{display:block;color:var(--green-deep,#004F38);font-weight:700;font-size:15px;margin-bottom:2px;}
 .anatomy-legend li>div{font-size:13.5px;line-height:1.5;color:var(--ink-soft,#41463f);}
+.anatomy-legend{counter-reset:none;}
+.anatomy-legend li::before{content:none !important;counter-increment:none !important;}
+.anatomy-legend li::marker{content:"" !important;}
 .anatomy-note{font-size:13.5px;line-height:1.6;color:var(--ink-soft,#41463f);margin-top:16px;}
 .sneaker-shot{background:#fff;border:1px solid var(--line,#e5e0d5);border-radius:4px;aspect-ratio:4 / 3;display:flex;align-items:center;justify-content:center;padding:10px;margin:0 0 16px;overflow:hidden;}
 .sneaker-shot img{max-width:100%;max-height:100%;object-fit:contain;display:block;}
 @media print{.sneaker-shot{aspect-ratio:auto;max-height:150px;}.sneaker-shot img{max-height:130px;}}
 </style>
 
-<style>.panel{display:block !important;opacity:1 !important;} body{padding:18px;max-width:900px;margin:0 auto;}</style>
+<style>.panel{display:block !important;} body{padding:18px;max-width:900px;margin:0 auto;}</style>
 </head>
 <body><section class="panel" id="sneakers" role="tabpanel">
   <div class="panel-header">
