@@ -18,7 +18,7 @@
 | CEMALAC (maroquinerie) | 799 | 7,6 % | 40 790 € | 9,1 % | 102 048 € | 9,8 % |
 | PENTLAND (chaussures) | 525 | 5,0 % | 27 542 € | 6,2 % | 52 917 € | 5,1 % |
 | MOVADO (montres) | 88 | 0,8 % | 6 883 € | 1,5 % | 9 436 € | 0,9 % |
-| COTY (parfums) | 113 | 1,1 % | 4 971 € | 1,1 % | 9 139 € | 0,9 % |
+| COTY (bijoux) | 113 | 1,1 % | 4 971 € | 1,1 % | 9 139 € | 0,9 % |
 | PUB (PLV / sacs, PV = 0) | 242 | 2,3 % | 572 € | 0,1 % | 0 € | 0,0 % |
 | ZUCCHI ex Jalla (linge) | 3 | 0,0 % | 79 € | 0,0 % | 197 € | 0,0 % |
 | LABELS & THINGS | 2 | 0,0 % | 76 € | 0,0 % | 158 € | 0,0 % |
@@ -33,17 +33,17 @@
 | Femme Textile | 575 | 5,5 % | 29 909 € | 6,7 % | 72 605 € | 7,0 % |
 | Homme Maroquinerie | 581 | 5,5 % | 25 896 € | 5,8 % | 64 827 € | 6,2 % |
 | Femme Maroquinerie | 382 | 3,6 % | 23 693 € | 5,3 % | 59 265 € | 5,7 % |
-| Accessoires Textile | 832 | 7,9 % | 20 195 € | 4,5 % | 44 405 € | 4,3 % |
+| Accessoires Textile (casquettes 517, chaussettes 254, écharpes/bonnets/gants) | 832 | 7,9 % | 20 195 € | 4,5 % | 44 405 € | 4,3 % |
 | Chaussures Homme | 253 | 2,4 % | 15 308 € | 3,4 % | 30 096 € | 2,9 % |
 | Chaussures Femme | 139 | 1,3 % | 8 159 € | 1,8 % | 15 740 € | 1,5 % |
 | Homme Underwear | 241 | 2,3 % | 4 315 € | 1,0 % | 11 270 € | 1,1 % |
 | Chaussures Enfant | 133 | 1,3 % | 4 075 € | 0,9 % | 7 081 € | 0,7 % |
 | Montres / APL Homme | 51 | 0,5 % | 3 970 € | 0,9 % | 4 778 € | 0,5 % |
 | Montres / APL Femme | 35 | 0,3 % | 2 852 € | 0,6 % | 4 530 € | 0,4 % |
-| Parfums Femme | 52 | 0,5 % | 2 427 € | 0,5 % | 4 244 € | 0,4 % |
-| Parfums Homme | 49 | 0,5 % | 2 091 € | 0,5 % | 3 907 € | 0,4 % |
+| Bijoux Femme (bracelets, colliers, BO) | 52 | 0,5 % | 2 427 € | 0,5 % | 4 244 € | 0,4 % |
+| Bijoux Homme (bracelets, colliers) | 49 | 0,5 % | 2 091 € | 0,5 % | 3 907 € | 0,4 % |
 | PLV / PUB (PV = 0) | 242 | 2,3 % | 572 € | 0,1 % | 0 € | 0,0 % |
-| Parfums Global | 12 | 0,1 % | 453 € | 0,1 % | 988 € | 0,1 % |
+| Bijoux Unisexe | 12 | 0,1 % | 453 € | 0,1 % | 988 € | 0,1 % |
 | Enfant Maroquinerie | 9 | 0,1 % | 297 € | 0,1 % | 700 € | 0,1 % |
 | Petite Maroquinerie | 13 | 0,1 % | 156 € | 0,0 % | 385 € | 0,0 % |
 | Montres / APL Enfant | 4 | 0,0 % | 138 € | 0,0 % | 286 € | 0,0 % |
@@ -65,6 +65,16 @@
 | Pantalon | 166 | 8 548 € | 21 760 € |
 | Bain | 220 | 6 360 € | 15 900 € |
 | Bermuda / Short / Slip | 54 | 2 020 € | 5 017 € |
+
+## 3 bis. Détail Accessoires Textile (2G)
+
+| Sous-famille | Volume | Montant PA | Montant PVTTC |
+|---|---:|---:|---:|
+| Casquettes | 517 | 15 220 € | 33 454 € |
+| Chaussettes | 254 | 3 104 € | 6 766 € |
+| Écharpes | 32 | 1 173 € | 2 580 € |
+| Bonnets | 17 | 425 € | 1 005 € |
+| Gants | 12 | 273 € | 600 € |
 
 ## 4. Ancienneté du stock (par collection)
 

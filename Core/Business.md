@@ -1,7 +1,7 @@
 # Business
 
 ## Produit/Service
-- Magasin de détail « 133 Thionville » — boutique/corner Lacoste multi-fournisseurs (textile Devanlay, maroquinerie Cemalac, chaussures Pentland, montres Movado, parfums Coty).
+- Magasin de détail « 133 Thionville » — boutique/corner Lacoste multi-fournisseurs (textile Devanlay, maroquinerie Cemalac, chaussures Pentland, montres Movado, bijoux Coty — pas de parfums en magasin).
 
 ## Finances
 - Stock au 12/06/2026 : 10 499 pièces, 446 920 € en prix d'achat, 1 037 932 € en PV TTC (coef moyen ×2,32).
