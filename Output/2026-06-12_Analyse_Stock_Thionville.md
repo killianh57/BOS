@@ -42,10 +42,10 @@
 | Montres / APL Femme | 35 | 0,3 % | 2 852 € | 0,6 % | 4 530 € | 0,4 % |
 | Bijoux Femme (bracelets, colliers, BO) | 52 | 0,5 % | 2 427 € | 0,5 % | 4 244 € | 0,4 % |
 | Bijoux Homme (bracelets, colliers) | 49 | 0,5 % | 2 091 € | 0,5 % | 3 907 € | 0,4 % |
-| PLV / PUB (PV = 0) | 242 | 2,3 % | 572 € | 0,1 % | 0 € | 0,0 % |
+| Cadeaux client (packaging, PV = 0) | 242 | 2,3 % | 572 € | 0,1 % | 0 € | 0,0 % |
 | Bijoux Unisexe | 12 | 0,1 % | 453 € | 0,1 % | 988 € | 0,1 % |
 | Enfant Maroquinerie | 9 | 0,1 % | 297 € | 0,1 % | 700 € | 0,1 % |
-| Petite Maroquinerie | 13 | 0,1 % | 156 € | 0,0 % | 385 € | 0,0 % |
+| Petite Maroquinerie (bag charms, lunch box) | 13 | 0,1 % | 156 € | 0,0 % | 385 € | 0,0 % |
 | Montres / APL Enfant | 4 | 0,0 % | 138 € | 0,0 % | 286 € | 0,0 % |
 | APL Global (linge) | 3 | 0,0 % | 79 € | 0,0 % | 197 € | 0,0 % |
 | Poubelle (à apurer) | 11 | 0,1 % | 572 € | 0,1 % | 1 240 € | 0,1 % |
