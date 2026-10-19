@@ -14,3 +14,4 @@
 - Le moteur de rendu est déplacé dans `tiktok-pipeline/render/`.
 - Correction de Killian : la démo réutilisait des plans des vidéos de référence → inacceptable, il veut 0 plagiat, des créations 100 % originales, une image nette et de belles couleurs. Fichiers supprimés, règle ajoutée dans CLAUDE.md.
 - Nouvelle demande : recherche internet sur les comptes qui ont déjà automatisé ce type de vidéos et sur ce qui a déjà été fait, pour se différencier.
+- Test image ChatGPT (réservoir de Boston 1919) fourni par Killian : couleurs et composition très réussies, mais faux pixel-art (135 000 couleurs, bords flous) et réservoir historiquement faux (silo haut alors que le vrai faisait 15 m de haut pour 27 m de large). BOS a écrit `tiktok-pipeline/render/pixelize.py` : grille nette + palette limitée ou palette fixe de la chaîne pour garantir la cohérence entre images.
