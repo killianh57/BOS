@@ -3,7 +3,11 @@
 Renderer "pixel-story" : prend une spec JSON de scènes et produit une vidéo 1080x1920 (9:16)
 dans le style : fond noir + halo chaud, illustration pixel-art centrée, grosses captions animées,
 petites étiquettes encadrées avec flèche, HUD (année / compteur), poussières.
-Usage : python3 render.py spec.json out.mp4 [--palette yellow] [--audio voice.mp3] [--frame t=12.3 out.png]
+Usage : python3 render.py spec.json out.mp4 [--palette yellow] [--audio voice.mp3] [--assets-dir DIR] [--timing timing.json] [--frame 12.3 out.png]
+Spec : {"handle": "", "assets": [{"id","description_fr","prompt"}], "scenes": [{"id","vo","asset","caption",...}]}
+- Un plan peut donner "duration" (s) ; sinon la durée vient de --timing {scene_id: {"start","end"}} (issu de la voix) ; sinon estimée depuis "vo" (≈15 caractères/s).
+- "asset" = id résolu en <assets-dir>/<id>.png ; si le fichier manque, un placeholder est dessiné (utile pour prévisualiser un storyboard avant les images).
+- Compatibilité : "image" = chemin direct vers un PNG (anciennes specs).
 """
 import json, math, random, subprocess, sys, os
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
@@ -201,28 +205,74 @@ def draw_handle(canvas, handle, pal):
     tw = d.textlength(handle, font=f)
     d.text(((W - tw) / 2, H - 330), handle, font=f, fill=tuple(int(c * 0.55) for c in WHITE))
 
+
+# ---------- assets : résolution + placeholder ----------
+_placeholder_cache = {}
+def placeholder_sprite(asset_id, desc, pal):
+    key = (asset_id, pal["accent"])
+    if key in _placeholder_cache: return _placeholder_cache[key]
+    size = 640
+    im = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    col = tuple(int(c * 0.55) for c in pal["accent"])
+    # cadre en pointillés "pixel"
+    step = 24
+    for x in range(16, size - 16, step):
+        d.rectangle([x, 16, x + 12, 24], fill=col); d.rectangle([x, size - 24, x + 12, size - 16], fill=col)
+    for y in range(16, size - 16, step):
+        d.rectangle([16, y, 24, y + 12], fill=col); d.rectangle([size - 24, y, size - 16, y + 12], fill=col)
+    f1 = font("pixel", 30); f2 = font("pixel_r", 22)
+    d.text((48, 60), "ASSET", font=f1, fill=col)
+    d.text((48, 100), asset_id.upper()[:26], font=f1, fill=pal["light"])
+    lines = wrap(d, desc or "", f2, size - 96)[:7]
+    for i, line in enumerate(lines):
+        d.text((48, 170 + i * 34), line, font=f2, fill=(170, 165, 150))
+    _placeholder_cache[key] = im
+    return im
+
+def estimate_duration(vo):
+    return max(1.8, min(6.0, len(vo) / 15.0))
+
+def prepare(spec, assets_dir, timing, spec_dir=None):
+    """Résout durée et image de chaque plan (clés privées _dur / _img / _ph)."""
+    assets = {a["id"]: a for a in spec.get("assets", [])}
+    spec_dir = spec_dir or HERE
+    for sc in spec["scenes"]:
+        if "duration" in sc: sc["_dur"] = float(sc["duration"])
+        elif timing and sc.get("id") in timing:
+            t = timing[sc["id"]]; sc["_dur"] = max(0.8, float(t["end"]) - float(t["start"]))
+        else: sc["_dur"] = estimate_duration(sc.get("vo", ""))
+        sc["_img"] = None; sc["_ph"] = None
+        if sc.get("image"):
+            sc["_img"] = sc["image"] if os.path.isabs(sc["image"]) else os.path.join(spec_dir, sc["image"])
+        elif sc.get("asset"):
+            cand = os.path.join(assets_dir or os.path.join(HERE, "assets"), sc["asset"] + ".png")
+            if os.path.exists(cand): sc["_img"] = cand
+            else: sc["_ph"] = (sc["asset"], assets.get(sc["asset"], {}).get("description_fr", ""))
+    return spec
+
 # ---------- scene ----------
 def render_frame(spec, pal, t, dust):
     scenes = spec["scenes"]
     # trouver la scène courante
     acc = 0; cur = None; t_local = 0
     for sc in scenes:
-        if t < acc + sc["duration"]: cur = sc; t_local = t - acc; break
-        acc += sc["duration"]
-    if cur is None: cur = scenes[-1]; t_local = cur["duration"]
+        if t < acc + sc["_dur"]: cur = sc; t_local = t - acc; break
+        acc += sc["_dur"]
+    if cur is None: cur = scenes[-1]; t_local = cur["_dur"]
     canvas = background(pal).convert("RGBA")
     d = ImageDraw.Draw(canvas)
     dust.draw(d, t, pal)
     # flash blanc très court à la coupe (comme un "pop")
     # illustration
-    if cur.get("image"):
-        sp = load_sprite(os.path.join(HERE, "..", cur["image"]), pal["hue"])
+    sp = None
+    if cur.get("_img"): sp = load_sprite(cur["_img"], pal["hue"])
+    elif cur.get("_ph"): sp = placeholder_sprite(cur["_ph"][0], cur["_ph"][1], pal)
+    if sp is not None:
         base = cur.get("scale", 1.0) * (W * 0.86) / sp.size[0]
         # entrée : pop (0.25s) puis zoom lent
         k = ease_out_back(t_local / 0.25) if cur.get("enter", "pop") == "pop" else 1
-        zoom = 1 + 0.045 * (t_local / max(cur["duration"], 0.1))
-        if cur.get("tilt"):  # oscillation (ex : tour qui penche)
-            pass
+        zoom = 1 + 0.045 * (t_local / max(cur["_dur"], 0.1))
         cy = H * cur.get("y", 0.52)
         paste_sprite(canvas, sp, W / 2, cy, base * zoom * (0.85 + 0.15 * k), alpha=min(1, t_local / 0.1))
     if cur.get("bars"):
@@ -249,11 +299,14 @@ def main():
     spec = json.load(open(args[0])); out = args[1]
     pal = PALETTES[args[args.index("--palette") + 1]] if "--palette" in args else PALETTES["yellow"]
     audio = args[args.index("--audio") + 1] if "--audio" in args else None
+    assets_dir = args[args.index("--assets-dir") + 1] if "--assets-dir" in args else None
+    timing = json.load(open(args[args.index("--timing") + 1])) if "--timing" in args else None
+    prepare(spec, assets_dir, timing, spec_dir=os.path.dirname(os.path.abspath(args[0])))
     dust = Dust()
     if "--frame" in args:  # rendu d'une seule image pour contrôle
         t = float(args[args.index("--frame") + 1]); png = args[args.index("--frame") + 2]
         render_frame(spec, pal, t, dust).save(png); print("frame", png); return
-    total = sum(s["duration"] for s in spec["scenes"])
+    total = sum(s["_dur"] for s in spec["scenes"])
     n = int(total * FPS)
     cmd = ["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-"]
     if audio: cmd += ["-i", audio, "-shortest"]

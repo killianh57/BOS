@@ -27,7 +27,7 @@ Canal unique : TikTok. Rien publié à ce jour.
 Budget outils non défini. Coût de production estimé par vidéo (API) : ~1-3 € hors abonnement de publication.
 
 ## Équipe
-Solo + BOS.
+Solo (Killian, anonyme à l'écran) + BOS.
 
 ## Outils (cible)
-Pipeline codé par BOS : script (LLM) → illustrations pixel-art (API image) → voix (TTS) → compositing (Python/ffmpeg, renderer `Output/2026-10-19_tiktok-pixel-story/pipeline/render.py`) → publication (API tierce TikTok).
+Pipeline codé par BOS dans `tiktok-pipeline/` : script (Claude API) → illustrations pixel-art (OpenAI Images) → voix synthétique FR (ElevenLabs, avec horodatage) → compositing (Python/ffmpeg, `tiktok-pipeline/render/render.py`) → publication (Upload-Post) ; orchestré par GitHub Actions (cron quotidien) avec validation manuelle d'1 min au départ.

@@ -2,3 +2,9 @@
 *.tmp
 *.swp
 *~
+tiktok-pipeline/out/
+tiktok-pipeline/cache/
+tiktok-pipeline/state.json
+__pycache__/
+*.pyc
+.env

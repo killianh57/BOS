@@ -1,13 +1,18 @@
 # Profile
 
 ## Entrepreneur
-- **Nom :** (à compléter)
-- **Expérience :** (à compléter — premier projet ? tentatives passées ?)
-- **Temps disponible :** (à compléter)
-- **Background :** (à compléter — à l'aise avec le code / les outils no-code ?)
+- **Nom :** Killian (ne doit JAMAIS apparaître dans le contenu publié : compte anonyme, pas de prénom, pas de visage)
+- **Expérience :** premier projet de contenu (à préciser : tentatives passées ?)
+- **Temps disponible :** 30 min/jour, soit ~3h30/semaine
+- **Background :** à préciser (aisance technique non confirmée ; hypothèse : préfère le zéro-technique)
 
 ## Semaine type
-(à compléter)
+30 min par jour. Usage cible de ce créneau : valider la vidéo du jour (2 min), lire les chiffres, répondre à BOS. Zéro production manuelle.
+
+## Préférences produit
+- Voix off : synthétique française (pas de clonage de sa voix)
+- Automatisation : full automatique accepté ; un script PC est aussi acceptable
+- Style : copie du format @alfred.explique, palette à tester (jaune vs orange ambré)
 
 ## Motivation
-(à compléter)
+Générer des revenus avec TikTok. (Montant cible et échéance : à préciser.)
